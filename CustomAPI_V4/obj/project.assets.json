@@ -187,11 +187,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\Sprint2-Search\\CustomAPI_V4\\CustomAPI_V4\\CustomAPI_V4.csproj",
+      "projectUniqueName": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\LESSON_1\\SEP3-Switchers\\CustomAPI_V4\\CustomAPI_V4.csproj",
       "projectName": "CustomAPI_V4",
-      "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\Sprint2-Search\\CustomAPI_V4\\CustomAPI_V4\\CustomAPI_V4.csproj",
+      "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\LESSON_1\\SEP3-Switchers\\CustomAPI_V4\\CustomAPI_V4.csproj",
       "packagesPath": "C:\\Users\\msama\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\Sprint2-Search\\CustomAPI_V4\\CustomAPI_V4\\obj\\",
+      "outputPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\LESSON_1\\SEP3-Switchers\\CustomAPI_V4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
