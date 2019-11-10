@@ -35,7 +35,7 @@ namespace CustomAPI_V4
             var input = "iphone";
             RestClient client =
                 new RestClient(
-                    "https://www.googleapis.com/customsearch/v1?key=AIzaSyC19-EocSwfWeacp7hHZ1L7SQT5ElR4cEg&cx=012558914576125397551:aqn3sajeroi&q=" + input);
+                    "https://www.googleapis.com/customsearch/v1?key=yourkey&cx=012558914576125397551:aqn3sajeroi&q=" + input);
             RestRequest request = new RestRequest(Method.GET);
 
             var json = client.Execute(request).Content;
