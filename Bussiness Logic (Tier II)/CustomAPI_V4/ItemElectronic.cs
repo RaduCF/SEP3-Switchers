@@ -1,5 +1,9 @@
-﻿namespace CustomAPI_V4
+﻿using System;
+using Newtonsoft.Json;
+
+namespace CustomAPI_V4
 {
+    [Serializable]
     public class SomethingElectronic
     {
         public int Id { get; set; }
