@@ -38,9 +38,10 @@
     <h1 class="display-2">CompareIT</h1>
     <p>Find the best prices for the products you need.</p>
 </div>
+
 <div id="searchdiv">
     <form method="post">
         <input type="text" name="search" placeholder="Search for an item here." id="searchbar" />
-        <input type="submit" value="Search" class="btn btn-default" id="submit" />
+        <input type="submit" value="Search" class="btn btn-default" id="submit" asp-page-handler="search"/>
     </form>
 </div>

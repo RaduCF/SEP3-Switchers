@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net.Sockets;
 using System.Net;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CustomAPI_V4
 {
@@ -12,9 +13,6 @@ namespace CustomAPI_V4
 
         public static void Main(string[] args)
         {
-            var gClient = new GoogleClient();
-            var electronic = new Electronic();
-
             executeServer();
 
             /*
@@ -35,23 +33,33 @@ namespace CustomAPI_V4
         public static void executeServer()
         {
             try {
-                byte[] adr = { 192, 168, 1, 81 };
+                var gClient = new GoogleClient();
+                var electronic = new Electronic();
+
+                byte[] adr = { 10,152,220,81 };
                 IPAddress ipadr = new IPAddress(adr);
                 TcpListener listen = new TcpListener(ipadr, 5000);
                 listen.Start();
-                Console.WriteLine("server started.");
+                Console.WriteLine("Server started.");
+                while (true) {
+                    Console.WriteLine("Waiting for connection...");
+                    TcpClient client = listen.AcceptTcpClient();
+                    Console.WriteLine("Connection accepted.");
 
-                TcpClient client = listen.AcceptTcpClient();
-                Console.WriteLine("Client acceepted.");
+                    NetworkStream stream = client.GetStream();
 
-                
-                var received = "";
-                int numByte = 0;
-                NetworkStream stream = client.GetStream();
-                byte[] bytestring;
-                Console.WriteLine("Message received: " + received);
+                    byte[] bytes= new byte[1024];
+                    
+                    int bytesRead = stream.Read(bytes,0,bytes.Length);
+                    var search = Encoding.ASCII.GetString(bytes, 0, bytesRead);
+                    Console.WriteLine("Message received: " + search);
+
+                    var items = gClient.searchApi(search);
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    formatter.Serialize(stream, items);
+                }
             }
-            catch( Exception e)
+            catch ( Exception e)
             {
                 Console.WriteLine(e.StackTrace);
             }

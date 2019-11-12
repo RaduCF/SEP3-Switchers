@@ -1,12 +1,12 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Razor_pages_non_mvc.Models;
+using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace CustomAPI_V4
+namespace RazorPagesMovie.Models
 {
-    [Serializable]
     public class Item
     {
-
         [JsonProperty("title")] 
         public string Title { get; set; }
 

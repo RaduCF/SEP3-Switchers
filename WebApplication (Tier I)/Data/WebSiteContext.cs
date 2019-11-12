@@ -14,6 +14,6 @@ namespace Razor_pages_non_mvc.Data
         {
         }
 
-        public DbSet<RazorPagesMovie.Models.Movie> Movie { get; set; }
+        public DbSet<RazorPagesMovie.Models.Item> Movie { get; set; }
     }
 }
