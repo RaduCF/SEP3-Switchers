@@ -4,6 +4,7 @@ namespace CustomAPI_V4
 {
     public class Offer
     {
+
         [JsonProperty("price")] 
         public long Price { get; set; }
 

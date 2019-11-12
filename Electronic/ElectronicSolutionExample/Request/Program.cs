@@ -68,7 +68,7 @@ namespace Request
 
             static void Main()
             {
-                Console.WriteLine("Select a item");
+                Console.WriteLine("Select an item");
                 int i = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine(i);
                 Console.WriteLine("The i selected");

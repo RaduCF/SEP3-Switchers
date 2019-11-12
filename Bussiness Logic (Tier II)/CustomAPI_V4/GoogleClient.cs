@@ -24,11 +24,15 @@ namespace CustomAPI_V4
             {
                 if (items.Pagemap.Offer != null)
                 {
-                    resultList.Add(items);
+                   resultList.Add(items);
                 }
             }
+            
             return resultList;
         }
+        
+
+
         //code-maze.com/different-ways-consume-restful-api-csharp/#RestSharp
         /*static void Main(string[] args)
         {
