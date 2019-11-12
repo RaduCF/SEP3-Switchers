@@ -29,7 +29,7 @@ namespace Electronic.Controllers
         }
 
         // GET: api/Items/5
-        [HttpGet("{id}")]
+        /*[HttpGet("{id}")]
         public async Task<ActionResult<Item>> GetItem(int id)
         {
             var item = await _context.Items.FindAsync(id);
@@ -40,6 +40,13 @@ namespace Electronic.Controllers
             }
 
             return item;
+        }*/
+
+        // GET: api/Items/iphone
+        [HttpGet("{name}")]
+        public async Task<ActionResult<IEnumerable<Item>>> GetItemName(string name)
+        {
+            return await _context.Items.Where(x => x.Name.Contains(name.ToLower())).ToListAsync();
         }
 
         // PUT: api/Items/5
