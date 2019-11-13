@@ -21,7 +21,7 @@ namespace WebSite.Pages
         public void OnGet()
         {
             /*
-            RestClient client = new RestClient("https://10.152.220.80/" + );
+            RestClient client = new RestClient("https://10.152.220.80/" + "searchString");
             RestRequest request = new RestRequest(Method.GET);
 
             var json = client.Execute(request).Content;

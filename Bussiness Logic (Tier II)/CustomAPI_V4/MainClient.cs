@@ -35,7 +35,9 @@ namespace CustomAPI_V4
             try {
                 var gClient = new GoogleClient();
                 var electronic = new Electronic();
+                gClient.searchApi("iphone");
 
+                /*
                 byte[] adr = { 10,152,220,81 };
                 IPAddress ipadr = new IPAddress(adr);
                 TcpListener listen = new TcpListener(ipadr, 5000);
@@ -58,6 +60,7 @@ namespace CustomAPI_V4
                     BinaryFormatter formatter = new BinaryFormatter();
                     formatter.Serialize(stream, items);
                 }
+                */
             }
             catch ( Exception e)
             {
