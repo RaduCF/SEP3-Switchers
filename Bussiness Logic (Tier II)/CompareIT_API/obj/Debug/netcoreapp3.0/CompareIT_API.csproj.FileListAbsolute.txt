@@ -151,3 +151,6 @@ C:\Users\msama\OneDrive\Desktop\CompareIT_API\CompareIT_API\bin\Debug\netcoreapp
 C:\Users\msama\OneDrive\Desktop\CompareIT_API\CompareIT_API\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
 C:\Users\msama\OneDrive\Desktop\CompareIT_API\CompareIT_API\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\msama\OneDrive\Desktop\CompareIT_API\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.csprojAssemblyReference.cache
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.dll
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.pdb

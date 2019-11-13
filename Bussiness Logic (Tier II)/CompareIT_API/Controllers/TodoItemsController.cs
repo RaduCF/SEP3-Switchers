@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using CompareIT_API.Model;
+using CustomAPI_V4;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -11,7 +12,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 namespace CompareIT_API
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/TodoItems")]
     public class TodoItemsController : ControllerBase
     {
 
@@ -23,20 +24,7 @@ namespace CompareIT_API
             this.context = context;
         }
 
-        // GET: api/TodoItems/5
-        [HttpGet("{id:int}")]
-        public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
-        {
-            Console.WriteLine("Get here");
-            TodoItem todoItem = await context.TodoItems.FindAsync(id);
-            compare.getPrices;  // the method from tier2 compareIT class
-            if (todoItem == null)
-            {
-                return NotFound();
-            }
-
-            return todoItem;
-        }
+        
 
         //get by query string
         [HttpGet]
@@ -45,17 +33,30 @@ namespace CompareIT_API
             Console.WriteLine($"Get all here.Title: {title}");
 
             IQueryable<TodoItem> todoItems = context.TodoItems;
-            todoItems = todoItems
-                .Where(item => title == null || item.Title.Equals(title));
-
+            todoItems = todoItems.Where(item => title == null || item.Title.Equals(title));
+            var result = compare.SearchForItems(title);
             if (!todoItems.Any())
             {
                 return NotFound();
             }
-
-            return todoItems.ToList();
+            return result;
         }
 
+        /*// GET: api/TodoItems/5
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
+        {
+            Console.WriteLine("Get here");
+            TodoItem todoItem = await context.TodoItems.FindAsync(id);
+            compare.SearchForItems();  // the method from tier2 compareIT class
+            if (todoItem == null)
+            {
+                return NotFound();
+            }
+
+            return todoItem;
+        }
+        */
 
         /* later use:
         // POST: api/TodoItems

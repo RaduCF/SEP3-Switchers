@@ -26,3 +26,8 @@ C:\Users\msama\OneDrive\Documents\3-semester\SEP3\LESSON_1\SEP3-Switchers\Custom
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\LESSON_1\SEP3-Switchers\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csproj.CopyComplete
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\LESSON_1\SEP3-Switchers\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.dll
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\LESSON_1\SEP3-Switchers\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.pdb
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csprojAssemblyReference.cache
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfoInputs.cache
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfo.cs
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.dll
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.pdb
