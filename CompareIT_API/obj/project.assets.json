@@ -7206,11 +7206,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\msama\\OneDrive\\Desktop\\CompareIT_API\\CompareIT_API\\CompareIT_API.csproj",
+      "projectUniqueName": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\LESSON_1\\SEP3-Switchers\\CompareIT_API\\CompareIT_API.csproj",
       "projectName": "CompareIT_API",
-      "projectPath": "C:\\Users\\msama\\OneDrive\\Desktop\\CompareIT_API\\CompareIT_API\\CompareIT_API.csproj",
+      "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\LESSON_1\\SEP3-Switchers\\CompareIT_API\\CompareIT_API.csproj",
       "packagesPath": "C:\\Users\\msama\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\msama\\OneDrive\\Desktop\\CompareIT_API\\CompareIT_API\\obj\\",
+      "outputPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\LESSON_1\\SEP3-Switchers\\CompareIT_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
