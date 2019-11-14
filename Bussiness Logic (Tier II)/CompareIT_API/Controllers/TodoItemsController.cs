@@ -11,36 +11,47 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace CompareIT_API
 {
-    [ApiController]
-    [Route("api/TodoItems")]
+        [Route("api/TodoItems")]
     public class TodoItemsController : ControllerBase
     {
-
         private readonly TodoContext context;
-        private CompareIT compare; // connection to the tier2
+        private CompareIT compare = new CompareIT(); // connection to the tier2
+       
+        
         public TodoItemsController(TodoContext context, CompareIT compare)
         {
-
             this.context = context;
         }
 
-        
 
-        //get by query string
+        //GET by query string
+        [HttpGet]
+        public IEnumerable<Item> GetItems(string title)
+        {
+            var result= compare.SearchForItems(title);
+            return result;
+        }
+
+
+
+        /*
+
+        //GET by query string
         [HttpGet]
         public async Task<ActionResult<List<TodoItem>>> GetTodoItems(string title)
         {
             Console.WriteLine($"Get all here.Title: {title}");
 
             IQueryable<TodoItem> todoItems = context.TodoItems;
-            todoItems = todoItems.Where(item => title == null || item.Title.Equals(title));
-            var result = compare.SearchForItems(title);
+            todoItems = todoItems.Where(item => title == null || item.Title.Equals(title)  );
+            
             if (!todoItems.Any())
             {
                 return NotFound();
             }
+
             return result;
-        }
+        }*/
 
         /*// GET: api/TodoItems/5
         [HttpGet("{id:int}")]

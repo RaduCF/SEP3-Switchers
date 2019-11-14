@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>CompareIT_API</AssemblyName>
+    <RootNamespace>CompareIT_API</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
