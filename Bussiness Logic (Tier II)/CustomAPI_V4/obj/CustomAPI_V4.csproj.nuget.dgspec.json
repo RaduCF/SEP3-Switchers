@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {}
+    "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
+    "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+        "projectUniqueName": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
         "projectName": "CustomAPI_V4",
-        "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
-        "packagesPath": "C:\\Users\\Radu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
+        "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+        "packagesPath": "C:\\Users\\msama\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
