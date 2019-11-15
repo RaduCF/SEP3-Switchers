@@ -32,6 +32,12 @@ namespace CompareIT_API
             return result;
         }
 
+        [HttpPost]
+        public IEnumerable<Item> GetItemsPost(string title)
+        {
+            var result = compare.SearchForItems(title);
+            return result;
+        }
 
 
         /*
