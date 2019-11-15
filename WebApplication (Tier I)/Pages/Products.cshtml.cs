@@ -17,24 +17,24 @@ namespace WebSite.Pages
     public class ProductsModel : PageModel
     {
         public List<Item> items = new List<Item>();
+        public string resultasstring = "";
         
         public void OnGet()
         {
-            /*
-            RestClient client = new RestClient("https://10.152.220.80/" + );
-            RestRequest request = new RestRequest(Method.GET);
+            var shit = "iphone";
+            RestClient client = new RestClient("https://localhost:5001/api/TodoItems/");
+            RestRequest request = new RestRequest(Method.POST);
+            request.AddParameter("title", shit);
 
-            var json = client.Execute(request).Content;
+            IRestResponse response = client.Execute(request);
+            resultasstring = response.Content;
 
-            var result = JsonConvert.DeserializeObject<Search>(json);
-            List<Item> resultList = new List<Item>();
-
+            //Search result = JsonConvert.DeserializeObject<Search>(json);
+            /*List<Item> resultList = new List<Item>();
+            
             foreach (var items in result.Items)
             {
-                if (items.Pagemap.Offer != null)
-                {
                     resultList.Add(items);
-                }
             }
             items = resultList;
             */

@@ -24,6 +24,19 @@
           "buildTransitive/EntityFramework.targets": {}
         }
       },
+      "Microsoft.AspNet.WebApi.Client/5.2.7": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -857,6 +870,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "NuGet.Frameworks/4.7.0": {
@@ -2080,6 +2106,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Newtonsoft.Json": "12.0.3-beta2",
           "RestSharp": "106.6.10"
         },
@@ -2143,6 +2170,23 @@
         "tools/netcoreapp3.1/any/ef6.dll",
         "tools/netcoreapp3.1/any/ef6.pdb",
         "tools/netcoreapp3.1/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.7": {
+      "sha512": "/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.client/5.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/System.Net.Http.Formatting.dll",
+        "lib/net45/System.Net.Http.Formatting.xml",
+        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
+        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
+        "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+        "microsoft.aspnet.webapi.client.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -3597,6 +3641,21 @@
         "packageIcon.png"
       ]
     },
+    "Newtonsoft.Json.Bson/1.0.1": {
+      "sha512": "5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
+      "type": "package",
+      "path": "newtonsoft.json.bson/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Newtonsoft.Json.Bson.dll",
+        "lib/net45/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
+        "newtonsoft.json.bson.1.0.1.nupkg.sha512",
+        "newtonsoft.json.bson.nuspec"
+      ]
+    },
     "NuGet.Frameworks/4.7.0": {
       "sha512": "qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "type": "package",
@@ -3883,7 +3942,7 @@
       ]
     },
     "System.Collections.NonGeneric/4.3.0": {
-      "sha512": "prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
+      "sha512": "LE/oChpRvkSi3U25u0KnJcI44JeDZ1QJCyN4qFDx2uusEypdqR24w7lKYw21eYe5esuCBuc862wRmpF63Yy1KQ==",
       "type": "package",
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
@@ -4144,7 +4203,7 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.3.0": {
-      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "sha512": "HZiP0DwTHJ+C+rdFqP47nBYUh5283kcwXIGY2zOVVhsJmVI/2tYiX2zNRdjRQRHsTox58Ydkec6h0pWSh8wAsw==",
       "type": "package",
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
@@ -7244,27 +7303,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\msama\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Radu\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
+      "projectUniqueName": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
       "projectName": "CompareIT_API",
-      "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
-      "packagesPath": "C:\\Users\\msama\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\obj\\",
+      "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
+      "packagesPath": "C:\\Users\\Radu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\msama\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Radu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
@@ -7276,8 +7332,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
-              "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj"
+            "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
+              "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj"
             }
           }
         }

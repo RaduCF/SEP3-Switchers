@@ -2,7 +2,7 @@
 
 namespace CustomAPI_V4
 {
-    /*https://app.quicktype.io/#l=cs&r=json2csharp*/
+    /*https://app.quicktype.io/#l=cs&r=json2csharp */
     public class Aggregaterating
     {
         [JsonProperty("ratingvalue")]
