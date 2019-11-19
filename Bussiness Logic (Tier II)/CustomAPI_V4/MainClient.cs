@@ -15,7 +15,8 @@ namespace CustomAPI_V4
         {
             executeServer();
 
-            /*
+            var gClient = new GoogleClient();
+            var electronic = new Electronic();
             foreach (var Item in gClient.searchApi("iphone"))
             {
                 Console.WriteLine($"Title= {Item.Title}\nLink={Item.Link}");
@@ -28,7 +29,7 @@ namespace CustomAPI_V4
             {
                 Console.WriteLine(Item);
             }
-            */
+            
         }
         public static void executeServer()
         {
@@ -36,7 +37,7 @@ namespace CustomAPI_V4
                 var gClient = new GoogleClient();
                 var electronic = new Electronic();
 
-                byte[] adr = { 10,152,220,81 };
+                byte[] adr = { 10,152,208,38 };
                 IPAddress ipadr = new IPAddress(adr);
                 TcpListener listen = new TcpListener(ipadr, 5000);
                 listen.Start();
