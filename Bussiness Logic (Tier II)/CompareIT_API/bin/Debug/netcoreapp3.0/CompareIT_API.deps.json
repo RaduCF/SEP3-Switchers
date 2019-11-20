@@ -32,6 +32,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "3.0.0",
           "Microsoft.Extensions.Logging.Debug": "3.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.0.0",
+          "Semver": "2.0.5",
           "Microsoft.AspNetCore.Antiforgery": "3.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.0.0.0",
@@ -1243,6 +1244,20 @@
           }
         }
       },
+      "Semver/2.0.5": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0-preview1-25301-01"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Semver.dll": {
+            "assemblyVersion": "2.0.5.0",
+            "fileVersion": "2.0.5.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.1/Semver.dll": {}
+        }
+      },
       "System.CodeDom/4.7.0-preview2.19523.17": {
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {
@@ -2118,7 +2133,8 @@
         "dependencies": {
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Newtonsoft.Json": "12.0.3-beta2",
-          "RestSharp": "106.6.10"
+          "RestSharp": "106.6.10",
+          "Semver": "2.0.5"
         },
         "runtime": {
           "CustomAPI_V4.dll": {}
@@ -4140,6 +4156,13 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "Semver/2.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MDHaiMWp8PNv0jAGnw2/pxDyu59dx1HcTDapEJpS3VLUcWMqOOl0vFBjvOehzlAbxji+YQszWiUlIfvY6//NyQ==",
+      "path": "semver/2.0.5",
+      "hashPath": "semver.2.0.5.nupkg.sha512"
     },
     "System.CodeDom/4.7.0-preview2.19523.17": {
       "type": "package",

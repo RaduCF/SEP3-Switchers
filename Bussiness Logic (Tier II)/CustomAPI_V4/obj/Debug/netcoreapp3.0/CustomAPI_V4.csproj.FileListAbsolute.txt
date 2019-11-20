@@ -58,3 +58,4 @@ C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csproj.CopyComplete
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\System.Net.Http.Formatting.dll
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Semver.dll
