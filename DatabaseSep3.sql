@@ -12,7 +12,6 @@ username character varying(15) COLLATE pg_catalog."default" NOT NULL,
     "isAdmin" boolean NOT NULL,
     CONSTRAINT "Users_pkey" PRIMARY KEY (username)
 );
-drop table public."Users" cascade ;
 CREATE TABLE if not exists public."Wish"
 (
     "URL" character varying COLLATE pg_catalog."default" NOT NULL,
