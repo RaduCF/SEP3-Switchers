@@ -28,14 +28,14 @@ namespace CompareIT_API
         [HttpGet]
         public IEnumerable<Item> GetItems(string title)
         {
-            var result= compare.SearchForItems(title);
+            var result= compare.SortedPriceList(title);
             return result;
         }
 
         [HttpPost]
         public IEnumerable<Item> GetItemsPost(string title)
         {
-            var result = compare.SearchForItems(title);
+            var result = compare.SortedPriceList(title);
             return result;
         }
 
