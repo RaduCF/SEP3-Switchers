@@ -23,17 +23,17 @@ namespace Razor_pages_non_mvc.Pages
 
         public void OnGet()
         {
-            if (!string.IsNullOrEmpty(SearchString))
+            if (!string.IsNullOrEmpty(search))
             {
                 OnPostSearch();
             }
         }
         public RedirectToPageResult OnPostSearch()
         {
-            return RedirectToPage("Products", SearchString);
+            return RedirectToPage("Products");
         }
 
-        [BindProperty(SupportsGet = true)]
-        public string SearchString { get; set; }
+        [BindProperty]
+        public string search { get; set; }
     }
 }

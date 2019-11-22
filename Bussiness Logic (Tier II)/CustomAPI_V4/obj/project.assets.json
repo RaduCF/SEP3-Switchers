@@ -99,7 +99,7 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/12.0.3-beta2": {
+      "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -1446,10 +1446,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/12.0.3-beta2": {
-      "sha512": "CNkBl+FKCsp1Tw7MKCpSOCKfZIElxOOBhG46VnFV2G0hRCC1Cc2UUJDknETNGeymXN1/k6hxd44uGVZvdwyEsQ==",
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "type": "package",
-      "path": "newtonsoft.json/12.0.3-beta2",
+      "path": "newtonsoft.json/12.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1472,7 +1472,7 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.3-beta2.nupkg.sha512",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
@@ -1560,7 +1560,7 @@
       ]
     },
     "runtime.native.System.IO.Compression/4.3.0": {
-      "sha512": "INBPonS5QPEgn7naufQFXJEp3zX6L4bwHgJ/ZH78aBTpeNfQMtf7C6VrAFhlq2xxWBveIOWyFzQjJ8XzHMhdOQ==",
+      "sha512": "b+V9JC/Ii3sR659flBeaBJww111425tgjcDS1k+hqV4sGh9FALRDBvJnDtQ895gAzpPTUOFDHdqaZ2Et7BpZMg==",
       "type": "package",
       "path": "runtime.native.system.io.compression/4.3.0",
       "files": [
@@ -1666,7 +1666,7 @@
       ]
     },
     "runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "nyFNiCk/r+VOiIqreLix8yN+q3Wga9+SE8BCgkf+2BwEKiNx6DyvFjCgkfV743/grxv8jHJ8gUK4XEQw7yzRYg==",
+      "sha512": "T5NvFgmHX0WH4c7lP72krsnk+IJI10vJf2j2twGE+5QBRA4RyRAgD+ZjEgdmpLOjW4B+nZGaadewTCUcR899OQ==",
       "type": "package",
       "path": "runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -4441,6 +4441,7 @@
       "path": "system.threading.tasks.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
@@ -4650,33 +4651,30 @@
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.AspNet.WebApi.Client >= 5.2.7",
       "Microsoft.CodeAnalysis.Analyzers >= 2.9.7",
-      "Newtonsoft.Json >= 12.0.3-beta2",
+      "Newtonsoft.Json >= 12.0.3",
       "RestSharp >= 106.6.10",
       "Semver >= 2.0.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\msama\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Radu\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+      "projectUniqueName": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
       "projectName": "CustomAPI_V4",
-      "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
-      "packagesPath": "C:\\Users\\msama\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
+      "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+      "packagesPath": "C:\\Users\\Radu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\msama\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Radu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
@@ -4711,7 +4709,7 @@
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[12.0.3-beta2, )"
+            "version": "[12.0.3, )"
           },
           "RestSharp": {
             "target": "Package",
