@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CompareIT_API.Model
 {
-    public class UserList
+    public class UserList: ModelManager
     {
         public List<User> userList{ get; set; }
 
@@ -59,6 +59,23 @@ namespace CompareIT_API.Model
                     user.wish.wishList.ToString();
                 }
             }
+        }
+
+        public bool LoginUser(User user)
+        {
+            foreach (var client in userList)
+            {
+                if
+                    (
+                    (user.GetUsername().Equals(client.GetUsername()))
+                    ||
+                    (user.GetPassword().Equals(client.GetPassword()))
+                    )
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

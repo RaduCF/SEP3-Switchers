@@ -42,6 +42,38 @@ namespace CompareIT_API.Model
 
         }
 
+        public String GetFirstname()
+        {
+            return Firstname;
+        }
+
+        public String GetLastname()
+        {
+            return Lastname;
+        }
+
+        public String GetUsername()
+        {
+            return Username;
+        }
+
+        public String GetPassword()
+        {
+            return Password;
+        }
+
+        public String GetEmail()
+        {
+            return Email;
+        }
+
+        public bool GetIsAdmin()
+        {
+            return IsAdmin;
+        }
+
+      
+
 
     }
 }
