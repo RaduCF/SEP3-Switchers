@@ -70,7 +70,7 @@
     {
         var model = new ExampleModel();
         string resultstring;
-        var itemname = model.Search;
+        var itemname = Input;
         RestClient client = new RestClient("https://localhost:5001/api/TodoItems/");
         RestRequest request = new RestRequest(Method.POST);
         request.AddParameter("title", itemname);
