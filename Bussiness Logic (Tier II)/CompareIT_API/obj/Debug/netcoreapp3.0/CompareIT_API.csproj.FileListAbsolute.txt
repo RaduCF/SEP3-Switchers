@@ -306,7 +306,6 @@ C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\bin\Debug\netcoreapp3.0\CustomAPI_V4.pdb
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\staticwebassets\CompareIT_API.StaticWebAssets.Manifest.cache
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\staticwebassets\CompareIT_API.StaticWebAssets.xml
-C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.AssemblyInfoInputs.cache
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.AssemblyInfo.cs
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.RazorTargetAssemblyInfo.cache
@@ -467,4 +466,7 @@ C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.AssemblyInfo.cs
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.RazorTargetAssemblyInfo.cache
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.csproj.CopyComplete
-C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Debug.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\bin\Debug\netcoreapp3.0\System.Net.Http.Formatting.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\bin\Debug\netcoreapp3.0\Semver.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.MvcApplicationPartsAssemblyInfo.cache
