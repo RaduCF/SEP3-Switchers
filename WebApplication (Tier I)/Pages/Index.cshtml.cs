@@ -30,7 +30,7 @@ namespace Razor_pages_non_mvc.Pages
         }
         public RedirectToPageResult OnPostSearch()
         {
-            return RedirectToPage("Products" , search);
+            return RedirectToPage("Products");
         }
 
         [BindProperty]

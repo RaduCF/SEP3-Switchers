@@ -23,8 +23,7 @@ namespace WebSite.Pages
 
         public void OnGet()
         {
-
-            var itemname = Search;
+            var itemname = "iphone";
             RestClient client = new RestClient("https://localhost:5001/api/TodoItems/");
             RestRequest request = new RestRequest(Method.POST);
             request.AddParameter("title", itemname);

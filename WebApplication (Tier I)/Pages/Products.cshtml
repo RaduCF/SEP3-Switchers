@@ -1,4 +1,4 @@
-﻿@page "/Products/{search}"
+﻿@page "/Products"
 @model WebSite.Pages.ProductsModel
 @{
     ViewData["Title"] = "Products";
@@ -36,7 +36,7 @@
 </style>
 
 <div id="titlediv">
-    <h2 class="display-4">Your search results: @Model.Search</h2>
+    <h2 class="display-4">Your search results:</h2>
 </div>
 <ul class="list-unstyled">
     @foreach (var item in Model.items)
@@ -44,7 +44,7 @@
     <li>
         <div id="itemdiv">
             <a href="@item.Link">
-                <div id="imagediv"><img src="Images/no-img.png" id="photo" alt="No image found."></img></div>
+                <div id="imagediv"><img src="Images/no-img.png" id="photo" alt="No image found."/></div>
                 <div id="itemDescDiv">
                     <p>@item.Title</p>
                     <br />

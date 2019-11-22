@@ -1,0 +1,59 @@
+﻿@page "/"
+@inject Microsoft.AspNetCore.Blazor.Services.IUriHelper UriHelper
+<style>
+    #titlediv {
+        margin-top: 20%;
+    }
+
+    #searchdiv {
+        width: 50%;
+        height: 20%;
+        margin: auto;
+        margin-top: 5%;
+    }
+
+    #searchbar {
+        width: 80%;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 11px;
+    }
+
+    #submit {
+        float: right;
+        width: 19.5%;
+        border: 1px solid #ccc;
+        border-radius: 11px;
+        padding: 12px 10px;
+        display: inline-block;
+        color: dimgrey;
+        margin-left: 0.5%;
+    }
+</style>
+
+<div id="titlediv" class="text-center">
+    <h1 class="display-2">CompareIT</h1>
+    <p>Find the best prices for the products you need.</p>
+</div>
+
+<div id="searchdiv">
+    <EditForm OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <InputText id="searchbar" @bind-Value="Search" />
+
+        <button type="submit" id="submit">Search</button>
+    </EditForm>
+</div>
+
+@functions{
+    public string Search { get; set; }
+
+    private void HandleValidSubmit()
+    {
+        string route = "Products/" + Search;
+        UriHelper.NavigateTo(route);
+    }
+}

@@ -21,40 +21,57 @@ namespace CustomAPI_V4
         public List<Item> SortedPriceList(string searchItem)
         {
             List<Item> everything = GoogleClient.searchApi(searchItem);
-            List<Item> thecheapestfirst = new List<Item>();
-            List<long> cheapItem = new List<long>();
+            List<Item> sortedlist = new List<Item>();
+            int size = 0;
+
+            foreach (var priceditem in everything)
+            {
+                if (priceditem.Pagemap.Offer != null)
+                {
+                    size++;
+                }
+            }
+
+            Item[] itemswithprice = new Item[size];
+
             try
             {
-                foreach (var items in everything)
+                var index = 0;
+                foreach (var priceditem in everything)
                 {
-                    if (items.Pagemap.Offer != null)
+                    if (priceditem.Pagemap.Offer != null)
                     {
-                        //get the price 
-                        var price = items.Pagemap.Offer[0].Price;
-                        for (int j = everything.Count - 1; j > 0; j--)
-                        {
-                            for (int i = 0; i < j; i++)
-                            {
-                                if (items.Pagemap.Offer[i].Price > items.Pagemap.Offer[i + 1].Price)
-                                {
-                                    var temp = everything[j - 1];
-                                    everything[j - 1] = everything[j];
-                                    everything[j] = temp;
-                                }
-                            }
-                        }
-                        //  cheapItem.Add(price);
-
+                        itemswithprice[index] = priceditem;
+                        index++;
                     }
-
                 }
-                // cheapItem.Sort();
+                //start of sorting
+                int i, j;
+                int N = itemswithprice.Length;
+
+                for (j = N - 1; j > 0; j--)
+                {
+                    for (i = 0; i < j; i++)
+                    {
+                        if (itemswithprice.ElementAt(i).Pagemap.Offer[0].Price > itemswithprice.ElementAt(i+1).Pagemap.Offer[0].Price)
+                        {
+                            var temp = itemswithprice[i];
+                            itemswithprice[i]= itemswithprice[i+1];
+                            itemswithprice[i + 1]= temp;
+                        }
+                    }
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
             }
-            return everything;
+            foreach (var item in itemswithprice)
+            {
+                Console.WriteLine(item.Title + " and the price: " + item.Pagemap.Offer[0].Price);
+            }
+
+            return itemswithprice.ToList<Item>();
 
         }
     }
