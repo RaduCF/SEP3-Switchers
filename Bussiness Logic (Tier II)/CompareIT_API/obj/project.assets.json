@@ -2119,7 +2119,7 @@
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
-          "Newtonsoft.Json": "12.0.3-beta2",
+          "Newtonsoft.Json": "12.0.3",
           "RestSharp": "106.6.10",
           "Semver": "2.0.5"
         },
@@ -3975,7 +3975,7 @@
       ]
     },
     "System.Collections.NonGeneric/4.3.0": {
-      "sha512": "prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
+      "sha512": "LE/oChpRvkSi3U25u0KnJcI44JeDZ1QJCyN4qFDx2uusEypdqR24w7lKYw21eYe5esuCBuc862wRmpF63Yy1KQ==",
       "type": "package",
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
@@ -4236,7 +4236,7 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.3.0": {
-      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "sha512": "HZiP0DwTHJ+C+rdFqP47nBYUh5283kcwXIGY2zOVVhsJmVI/2tYiX2zNRdjRQRHsTox58Ydkec6h0pWSh8wAsw==",
       "type": "package",
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
@@ -7330,34 +7330,31 @@
       "Microsoft.EntityFrameworkCore.InMemory >= 3.1.0-preview2.19525.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 2.0.0-preview1-final",
-      "Microsoft.EntityFrameworkCore.Tools >= 3.0.0",
-      "Microsoft.Extensions.Logging.Debug >= 3.0.0",
+      "Microsoft.EntityFrameworkCore.Tools >= 3.0.1",
+      "Microsoft.Extensions.Logging.Debug >= 3.0.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.0.0",
       "Semver >= 2.0.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\msama\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Radu\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
+      "projectUniqueName": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
       "projectName": "CompareIT_API",
-      "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
-      "packagesPath": "C:\\Users\\msama\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\obj\\",
+      "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
+      "packagesPath": "C:\\Users\\Radu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\msama\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Radu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
@@ -7369,8 +7366,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
-              "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj"
+            "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
+              "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj"
             }
           }
         }

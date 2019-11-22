@@ -53,11 +53,11 @@ namespace CustomAPI_V4
                 {
                     for (i = 0; i < j; i++)
                     {
-                        if (itemswithprice.ElementAt(i).Pagemap.Offer[0].Price > itemswithprice.ElementAt(i+1).Pagemap.Offer[0].Price)
+                        if (itemswithprice.ElementAt(i).Pagemap.Offer[0].Price > itemswithprice.ElementAt(i + 1).Pagemap.Offer[0].Price)
                         {
                             var temp = itemswithprice[i];
-                            itemswithprice[i]= itemswithprice[i+1];
-                            itemswithprice[i + 1]= temp;
+                            itemswithprice[i] = itemswithprice[i + 1];
+                            itemswithprice[i + 1] = temp;
                         }
                     }
                 }
@@ -70,9 +70,7 @@ namespace CustomAPI_V4
             {
                 Console.WriteLine(item.Title + " and the price: " + item.Pagemap.Offer[0].Price);
             }
-
             return itemswithprice.ToList<Item>();
-
         }
     }
 }

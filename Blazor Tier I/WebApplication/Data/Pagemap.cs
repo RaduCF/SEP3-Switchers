@@ -12,5 +12,8 @@ namespace WebApplication.Data
         public Offer[] Offer { get; set; }
         [JsonProperty("aggregaterating", NullValueHandling = NullValueHandling.Ignore)]
         public Aggregaterating[] Aggregaterating { get; set; }
+        [JsonProperty("product", NullValueHandling = NullValueHandling.Ignore)]
+        public Product[] Product { get; set; }
+
     }
 }
