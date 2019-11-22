@@ -954,6 +954,18 @@
           }
         }
       },
+      "Semver/2.0.5": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Semver.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Semver.dll": {}
+        }
+      },
       "System.CodeDom/4.7.0-preview2.19523.17": {
         "type": "package",
         "compile": {
@@ -2108,7 +2120,8 @@
         "dependencies": {
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Newtonsoft.Json": "12.0.3-beta2",
-          "RestSharp": "106.6.10"
+          "RestSharp": "106.6.10",
+          "Semver": "2.0.5"
         },
         "compile": {
           "bin/placeholder/CustomAPI_V4.dll": {}
@@ -3759,6 +3772,21 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Semver/2.0.5": {
+      "sha512": "MDHaiMWp8PNv0jAGnw2/pxDyu59dx1HcTDapEJpS3VLUcWMqOOl0vFBjvOehzlAbxji+YQszWiUlIfvY6//NyQ==",
+      "type": "package",
+      "path": "semver/2.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/Semver.dll",
+        "lib/net452/Semver.xml",
+        "lib/netstandard1.1/Semver.dll",
+        "lib/netstandard1.1/Semver.xml",
+        "semver.2.0.5.nupkg.sha512",
+        "semver.nuspec"
       ]
     },
     "System.CodeDom/4.7.0-preview2.19523.17": {
@@ -7299,7 +7327,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 2.0.0-preview1-final",
       "Microsoft.EntityFrameworkCore.Tools >= 3.0.0",
       "Microsoft.Extensions.Logging.Debug >= 3.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.0.0"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.0.0",
+      "Semver >= 2.0.5"
     ]
   },
   "packageFolders": {
@@ -7379,6 +7408,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.0.0, )"
+          },
+          "Semver": {
+            "target": "Package",
+            "version": "[2.0.5, )"
           }
         },
         "imports": [

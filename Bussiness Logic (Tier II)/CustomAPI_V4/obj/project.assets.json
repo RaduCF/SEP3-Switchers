@@ -301,6 +301,18 @@
           }
         }
       },
+      "Semver/2.0.5": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Semver.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Semver.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1703,6 +1715,21 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "Semver/2.0.5": {
+      "sha512": "MDHaiMWp8PNv0jAGnw2/pxDyu59dx1HcTDapEJpS3VLUcWMqOOl0vFBjvOehzlAbxji+YQszWiUlIfvY6//NyQ==",
+      "type": "package",
+      "path": "semver/2.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/Semver.dll",
+        "lib/net452/Semver.xml",
+        "lib/netstandard1.1/Semver.dll",
+        "lib/netstandard1.1/Semver.xml",
+        "semver.2.0.5.nupkg.sha512",
+        "semver.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -4624,7 +4651,8 @@
       "Microsoft.AspNet.WebApi.Client >= 5.2.7",
       "Microsoft.CodeAnalysis.Analyzers >= 2.9.7",
       "Newtonsoft.Json >= 12.0.3-beta2",
-      "RestSharp >= 106.6.10"
+      "RestSharp >= 106.6.10",
+      "Semver >= 2.0.5"
     ]
   },
   "packageFolders": {
@@ -4688,6 +4716,10 @@
           "RestSharp": {
             "target": "Package",
             "version": "[106.6.10, )"
+          },
+          "Semver": {
+            "target": "Package",
+            "version": "[2.0.5, )"
           }
         },
         "imports": [

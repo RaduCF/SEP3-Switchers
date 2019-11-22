@@ -28,7 +28,8 @@ namespace CompareIT_API
                     opt.UseInMemoryDatabase("TodoList")); // install Microsoft.EntityFrameworkCore.InMemory
                 services.AddControllers();
                 services.AddTransient<CompareIT>(); //cobling to our own logic class in Tier 2
-                
+                //services.AddTransient<UserList>(); //cobling to the Model
+
             }
 
             // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
