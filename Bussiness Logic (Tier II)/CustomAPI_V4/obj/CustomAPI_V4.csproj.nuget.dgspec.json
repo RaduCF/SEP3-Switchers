@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Ati\\Documents\\GitHub\\sep3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {}
   },
   "projects": {
@@ -12,13 +13,33 @@
         "projectPath": "C:\\Users\\Ati\\Documents\\GitHub\\sep3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
         "packagesPath": "C:\\Users\\Ati\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Ati\\Documents\\GitHub\\sep3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
+=======
+    "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+        "projectName": "CustomAPI_V4",
+        "projectPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+        "packagesPath": "C:\\Users\\msama\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\msama\\OneDrive\\Documents\\3-semester\\SEP3\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
+>>>>>>> Pouneh
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Ati\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+          "C:\\Users\\msama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> Pouneh
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -58,6 +79,10 @@
             "RestSharp": {
               "target": "Package",
               "version": "[106.6.10, )"
+            },
+            "Semver": {
+              "target": "Package",
+              "version": "[2.0.5, )"
             }
           },
           "imports": [

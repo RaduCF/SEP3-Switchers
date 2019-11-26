@@ -11,7 +11,7 @@ namespace CustomAPI_V4
 
        // public List<Item> ElectronicList { get; set; } Claire
 
-       public /*async*/ List<Item> SearchForItems(string searchInput)
+       public /*async*/ IEnumerable<Item> SearchForItems(string searchInput)
        {
             GoogleList = GoogleClient.searchApi(searchInput);
             return GoogleList;

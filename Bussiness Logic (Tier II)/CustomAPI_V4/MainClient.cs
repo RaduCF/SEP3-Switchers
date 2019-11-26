@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Net.Sockets;
-using System.Net;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CustomAPI_V4
 {
     class MainClient
     {
-        
-
         public static void Main(string[] args)
         {
+<<<<<<< HEAD
             executeServer();
 
             var gClient = new GoogleClient();
@@ -46,25 +42,12 @@ namespace CustomAPI_V4
                     Console.WriteLine("Waiting for connection...");
                     TcpClient client = listen.AcceptTcpClient();
                     Console.WriteLine("Connection accepted.");
+=======
+            Console.WriteLine("client started...");
+>>>>>>> Pouneh
 
-                    NetworkStream stream = client.GetStream();
 
-                    byte[] bytes= new byte[1024];
-                    
-                    int bytesRead = stream.Read(bytes,0,bytes.Length);
-                    var search = Encoding.ASCII.GetString(bytes, 0, bytesRead);
-                    Console.WriteLine("Message received: " + search);
 
-                    var items = gClient.searchApi(search);
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(stream, items);
-                }
-            }
-            catch ( Exception e)
-            {
-                Console.WriteLine(e.StackTrace);
-            }
-            
         }
     }
 }
