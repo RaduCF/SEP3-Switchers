@@ -4,24 +4,33 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.sql.SQLException;
+
 import com.google.gson.Gson;
+import domain.User;
 
 
 public class ServerBeClient {
-    public static void main(String[] args) throws IOException {
-        final String HOST = "10.152.208.46";
+    public static void main(String[] args) throws IOException, SQLException {
+        final String HOST = "192.168.1.3";
 
         final int PORT = 6799;
         Gson gson = new Gson();
     Socket socket = new Socket(HOST, PORT);
         System.out.println("connecting to server");
 
-    BufferedInputStream in = new BufferedInputStream(socket.getInputStream());
+  //  BufferedInputStream in = new BufferedInputStream(socket.getInputStream());
     BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream());
 
-    String rep = "client sends data to the server!";
-     String repJson=gson.toJson(rep);
+    //String rep = "client sends data to the server!";
+   String us1="Ati";
+     String repJson=gson.toJson(loadUser(us1));
     byte[] bytes = repJson.getBytes();
         out.write(bytes);
         out.flush();
-}}
+}
+    public static User loadUser(String username) throws SQLException {
+        ICompare_Database database = new Compare_Database();
+       return  ((Compare_Database) database).loadOneUser(username);
+    }
+}

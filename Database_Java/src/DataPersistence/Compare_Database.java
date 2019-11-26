@@ -66,23 +66,6 @@ public class Compare_Database implements ICompare_Database {
             return list;
         }
 
-        //This is a private method which loads only one user by passing a username as an argument and return one user.
-
-        public User loadOneUser(String username) throws SQLException
-        {
-            String sql = "SELECT Users.username, Users.password,Users.firstname,Users.lastname,Users.email,Users.isAdmin,Wish.url " +
-                    "FROM public.Users " +
-                    "inner join Wish.url on Users.username = Wish.username WHERE User.username=?;";
-            User user = null;
-
-            ArrayList<Object[]> user1 = db.query(sql, username);
-            for (int i = 0; i < user1.size(); i++)
-            {
-                Object[] array = user1.get(i);
-                user1 = new User(array[0] + "", array[1] + "", array[2] + "", array[3] + "", array[4] + "", array[5] + "", array[6] + "");
-            }
-            return user;
-        }
 
         //This method registers a new wish
         public synchronized void registerWish(Wish wish) throws SQLException
@@ -108,6 +91,23 @@ public class Compare_Database implements ICompare_Database {
 
             }
         }*/
+    //This is a private method which loads only one user by passing a username as an argument and return one user.
+
+    public synchronized User loadOneUser(String username) throws SQLException
+    {
+        String sql = "SELECT Users.username, Users.password,Users.firstname,Users.lastname,Users.email,Users.isAdmin " +
+                "FROM Public.Users WHERE username=?; " ;
+
+        User user = null;
+
+        ArrayList<Object[]> user1 = db.query(sql, username);
+        for (int i = 0; i < user1.size(); i++)
+        {
+            Object[] array = user1.get(i);
+            user = new User(array[0] + "", array[1] + "", array[2] + "", array[3] + "", array[4] + "",( boolean)array[5] );
+        }
+        return user;
+    }
 
     //This method adds a user
     public synchronized void registerUser(User user) throws SQLException {
