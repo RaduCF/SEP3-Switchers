@@ -1,6 +1,6 @@
 package DataPersistence;
 
-import java.io.BufferedInputStream;
+
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -19,10 +19,10 @@ public class ServerBeClient {
     Socket socket = new Socket(HOST, PORT);
         System.out.println("connecting to server");
 
-  //  BufferedInputStream in = new BufferedInputStream(socket.getInputStream());
+ 
     BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream());
 
-    //String rep = "client sends data to the server!";
+   
    String us1="Ati";
      String repJson=gson.toJson(loadUser(us1));
     byte[] bytes = repJson.getBytes();
