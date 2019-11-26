@@ -23,3 +23,4 @@ CREATE TABLE if not exists Public.Wish
         ON DELETE NO ACTION
 );
 select * from Users;
+drop table Users cascade ;
