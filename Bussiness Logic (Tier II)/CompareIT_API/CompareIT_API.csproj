@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\..\Bussiness Logic %2528Tier II%2529\CompareIT_API\Model_2\Domain\User.cs" />
-    <Compile Include="..\..\Bussiness Logic %2528Tier II%2529\CompareIT_API\Model_2\Domain\UserList.cs" />
-    <Compile Include="..\..\Bussiness Logic %2528Tier II%2529\CompareIT_API\Model_2\Domain\Wish.cs" />
-    <Compile Include="..\..\Bussiness Logic %2528Tier II%2529\CompareIT_API\Model_2\Domain\WishList.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.0-preview2-19525-03" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.0-preview2.19525.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.1" />
@@ -29,6 +22,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CustomAPI_V4\CustomAPI_V4.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\Domain\" />
   </ItemGroup>
 
 </Project>

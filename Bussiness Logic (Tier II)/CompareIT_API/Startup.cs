@@ -1,8 +1,8 @@
+using CompareIT_API.Controllers;
 using CompareIT_API.Model;
 using CustomAPI_V4;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,8 +27,8 @@ namespace CompareIT_API
                 services.AddDbContext<TodoContext>(opt =>
                     opt.UseInMemoryDatabase("TodoList")); // install Microsoft.EntityFrameworkCore.InMemory
                 services.AddControllers();
-                services.AddTransient<CompareIT>(); //cobling to our own logic class in Tier 2
-                //services.AddTransient<UserList>(); //cobling to the Model
+                //services.AddTransient<CompareIT>(); //cobling to our own logic class in Tier 2
+                services.AddTransient<UserController>(); //cobling to the Model
 
             }
 
