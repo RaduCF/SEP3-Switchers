@@ -13,10 +13,10 @@ namespace CompareIT_API.Model
         }
 
 
-        public void registerWish(string URL_)
+        public void registerWish(string URL)
         {
-            Wish wish= new Wish(URL_);
-            wishList.Add(wish);
+                Wish wish = new Wish(URL);
+                wishList.Add(wish);
         }
 
         public void removeWish(Wish wish)

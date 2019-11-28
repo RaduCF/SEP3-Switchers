@@ -16,7 +16,6 @@ namespace CompareIT_API.Model
             }
 
             public DbSet<TodoItem> TodoItems { get; set; }
-            public DbSet<UserList> ManageUsers { get; set; }
         }
     }
 

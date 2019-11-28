@@ -24,4 +24,8 @@
     <ProjectReference Include="..\CustomAPI_V4\CustomAPI_V4.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\Domain\" />
+  </ItemGroup>
+
 </Project>

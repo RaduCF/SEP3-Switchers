@@ -8,6 +8,10 @@ namespace CustomAPI_V4
     {
         [JsonProperty("items")]
         public Item[] Items { get; set; }
+
+        [JsonProperty("queries")]
+        public Queries Queries { get; set; }
+
     }
 
 

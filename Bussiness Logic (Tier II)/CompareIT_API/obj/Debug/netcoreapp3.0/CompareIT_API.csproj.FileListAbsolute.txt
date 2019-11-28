@@ -472,3 +472,4 @@ C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\obj\Debug\netcoreapp3.0\CompareIT_API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Debug.dll
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\bin\Debug\netcoreapp3.0\Semver.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CompareIT_API\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Debug.dll
