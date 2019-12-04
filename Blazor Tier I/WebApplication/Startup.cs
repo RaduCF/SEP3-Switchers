@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -26,8 +29,19 @@ namespace WebApplication
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
+                options.LoginPath = "/login";
+                options.AccessDeniedPath = "/AccessDenied";
+            });
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddSingleton<Connection>();
+
+            services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
+
+            services.AddAuthorization(options => {
+                options.AddPolicy("MustBeAdmin", p => p.RequireAuthenticatedUser().RequireClaim("Role", "admin"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +62,9 @@ namespace WebApplication
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

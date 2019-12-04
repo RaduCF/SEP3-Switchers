@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UserAPI.Model;
 using Microsoft.EntityFrameworkCore;
+using UserAPI.Controllers;
+using UserAPI.Mediator;
 
 namespace UserAPI
 {
@@ -23,8 +25,9 @@ namespace UserAPI
         {
             services.AddDbContext<UserContext>(opt =>
                 opt.UseInMemoryDatabase("User_InMemory_Data")); // install Microsoft.EntityFrameworkCore.InMemory
-            services.AddTransient<ModelManager>();
+
             services.AddControllers();
+          //  services.AddTransient<ModelManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
