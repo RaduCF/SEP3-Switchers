@@ -41,8 +41,12 @@ namespace CustomAPI_V4
                 {
                     if (priceditem.Pagemap.Offer != null)
                     {
-                        itemswithprice[index] = priceditem;
-                        index++;
+                        //if (priceditem.Pagemap.Product[0].Photo != null)
+                        //{
+                            itemswithprice[index] = priceditem;
+                            index++;
+                        //}
+                        
                     }
                 }
                 //start of sorting
@@ -70,7 +74,11 @@ namespace CustomAPI_V4
             {
                 Console.WriteLine(item.Title + " and the price: " + item.Pagemap.Offer[0].Price);
             }
-            return itemswithprice.ToList<Item>();
+            foreach (var item in itemswithprice)
+            {
+                sortedlist.Add(item);
+            }
+            return sortedlist;
         }
     }
 }

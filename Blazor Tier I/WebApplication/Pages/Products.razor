@@ -1,9 +1,8 @@
 ﻿@page "/Products"
-@page "/Products/{input}"
 
-@using WebApplication.Data
 @using RestSharp
 @using Newtonsoft.Json
+@inject WebApplication.Data.Connection connection
 
 <style>
     #titlediv {
@@ -20,8 +19,8 @@
 
     #imagediv {
         float: left;
-        width: 20%;
-        height: 100%;
+        width: 23%;
+        height: 148px;
         border: 1px solid #ccc;
         border-radius: 2px;
     }
@@ -33,7 +32,7 @@
 
     #itemDescDiv {
         float: right;
-        width: 79.9%;
+        width: 76.9%;
         height: 100%;
         border: 1px solid #ccc;
         border-radius: 2px;
@@ -43,13 +42,14 @@
 <div id="titlediv">
     <h2 class="display-4">Your search results:</h2>
 </div>
+
 <ul class="list-unstyled">
-    @foreach (var item in result)
+    @foreach (var item in connection.Final)
     {
-        <li>
+        <li id="@index">
             <div id="itemdiv">
-                <a href="@item.Link">
-                    <div id="imagediv"><img src="@item.Pagemap.Product[3].Photo" id="photo" alt="Product image." /></div>
+                <a href="@item.Link" target="_blank">
+                    <div id="imagediv"><img src="~/Images/no-img.png" id="photo" alt="Product image." /></div>
                     <div id="itemDescDiv">
                         <p>@item.Title</p>
                         <br />
@@ -58,33 +58,10 @@
                 </a>
             </div>
         </li>
+        <li hidden>@(index++)</li>
     }
 </ul>
+@code{
 
-@functions{
-    List<Item> result = new List<Item>();
-    [Parameter]
-    public string Input { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        var model = new ExampleModel();
-        string resultstring;
-        var itemname = Input;
-        RestClient client = new RestClient("https://localhost:5001/api/TodoItems/");
-        RestRequest request = new RestRequest(Method.POST);
-        request.AddParameter("title", itemname);
-
-        IRestResponse response = client.Execute(request);
-        resultstring = response.Content;
-
-        List<Item> resultList = new List<Item>();
-        var result = JsonConvert.DeserializeObject<List<Item>>(resultstring);
-
-        foreach (var items in result)
-        {
-            resultList.Add(items);
-        }
-        result = resultList;
-    }
+    public int index { get; set; } = 0;
 }

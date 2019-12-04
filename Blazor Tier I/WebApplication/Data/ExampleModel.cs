@@ -3,6 +3,6 @@
 public class ExampleModel
 {
     [Required]
-    [StringLength(10, ErrorMessage = "Name is too long.")]
+    [StringLength(25, ErrorMessage = "Text is too long.")]
     public string Search { get; set; }
 }

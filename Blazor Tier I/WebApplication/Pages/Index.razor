@@ -1,4 +1,7 @@
 ﻿@page "/"
+@using WebApplication.Data
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+@inject WebApplication.Data.Connection connection
 <style>
     #titlediv {
         margin-top: 20%;
@@ -26,10 +29,18 @@
         border-radius: 11px;
         padding: 12px 10px;
         display: inline-block;
-        color: dimgrey;
         margin-left: 0.5%;
     }
 </style>
+<AuthorizeView>
+    <Authorized>
+        <p>Logged in</p>
+    </Authorized>
+    <NotAuthorized>
+        <p>Not logged in</p>
+        <LoginDisplay />
+    </NotAuthorized>
+</AuthorizeView>
 
 <div id="titlediv" class="text-center">
     <h1 class="display-2">CompareIT</h1>
@@ -43,16 +54,38 @@
 
         <InputText id="searchbar" @bind-Value="exampleModel.Search" />
 
-        <button type="submit" id="submit">Search</button>
+        <button type="submit" id="submit" @onclick="HandleValidSubmit">Search</button>
     </EditForm>
 </div>
 
-@functions{
+
+<button type="submit" id="register" @onclick="Register">Register</button>
+<p>@user.FirstName @user.LastName   @shting</p>
+
+@code{
     private ExampleModel exampleModel = new ExampleModel();
+    public User user { get; set; } = new User();
+    string shting = "";
 
     public void HandleValidSubmit()
     {
-        string route = "Products/" + exampleModel.Search;
-        //NavigationManager.NavigateTo(route);
+        if (!string.IsNullOrEmpty(exampleModel.Search))
+        {
+            try
+            {
+                connection.GetItems(exampleModel.Search);
+                NavigationManager.NavigateTo("/Products");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+        }
+
+    }
+    public void Register()
+    {
+        shting = "Works";
+        user = connection.sendRegisterRequest();
     }
 }

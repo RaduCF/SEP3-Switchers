@@ -18,7 +18,7 @@ namespace CompareIT_API
         private CompareIT compare = new CompareIT(); // connection to the tier2
        
         
-        public TodoItemsController(TodoContext context, CompareIT compare)
+        public TodoItemsController(TodoContext context)
         {
             this.context = context;
         }
@@ -32,6 +32,7 @@ namespace CompareIT_API
             return result;
         }
 
+        //POST getting a list by a received string
         [HttpPost]
         public IEnumerable<Item> GetItemsPost(string title)
         {
