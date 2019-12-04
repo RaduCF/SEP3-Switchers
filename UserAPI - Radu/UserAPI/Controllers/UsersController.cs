@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using UserAPI.Mediator;
 using UserAPI.Model;
 
 namespace UserAPI.Controllers
@@ -12,65 +14,32 @@ namespace UserAPI.Controllers
     [Route("api/Users")]
     [ApiController]
 
+    //[Route("api/Users")]
 
     public class UsersController : ControllerBase
     {
-        private readonly UserContext context;
+        private readonly UserContext _context;
         private ModelManager manager;
 
-        public UsersController(UserContext context, ModelManager manager)
+        public UsersController(UserContext context)
         {
-            this.context = context;
+            _context = context;
+             manager = new ModelManager();
         }
-
-
-        // POST: api/Users
-        [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
-        {
-            context.Users.Add(user);            //saving in the in-memory
-            //manager.RegisterUser(user);         // connecting to ClientCSharp and then to tier3 for saving in database
-
-            try
-            {
-                await context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (UserExists(user.ID))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetUser", new { id = user.ID }, user);
-        }
-
-        
-
-
-
-
-
-
 
         // GET: api/Users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-
-            return await context.Users.ToListAsync();
+            return await _context.Users.ToListAsync();
+           // return manager.ReceiveMessage(msg);
         }
 
         // GET: api/Users/2
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(string id)
         {
-            var user = await context.Users.FindAsync(id);
+            var user = await _context.Users.FindAsync(id);
 
             if (user == null)
             {
@@ -81,6 +50,8 @@ namespace UserAPI.Controllers
         }
 
         // PUT: api/Users/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(string id, User user)
         {
@@ -89,11 +60,11 @@ namespace UserAPI.Controllers
                 return BadRequest();
             }
 
-            context.Entry(user).State = EntityState.Modified;
+            _context.Entry(user).State = EntityState.Modified;
 
             try
             {
-                await context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -110,26 +81,58 @@ namespace UserAPI.Controllers
             return NoContent();
         }
 
-        
+        // POST: api/Users
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://aka.ms/RazorPagesCRUD.
+        [HttpPost]
+        public async Task<ActionResult<User>> PostUser(User user)
+        {
+            Console.WriteLine("test");
+            _context.Users.Add(user);
+        try
+        {
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateException)
+        {
+            if (UserExists(user.ID))
+            {
+                return Conflict();
+            }
+            else
+            {
+                throw;
+            }
+        } 
+
+            manager.RegisterUser(user);
+            
+            
+            return CreatedAtAction("GetUser", new { id = user }, user);
+
+           
+            
+        }
+
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(string id)
         {
-            var user = await context.Users.FindAsync(id);
+            var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            context.Users.Remove(user);
-            await context.SaveChangesAsync();
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
 
             return user;
         }
 
         private bool UserExists(string id)
         {
-            return context.Users.Any(e => e.ID == id);
+            return _context.Users.Any(e => e.ID == id);
         }
     }
 }
