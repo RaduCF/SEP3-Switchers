@@ -3,6 +3,8 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace WebApplication.Data
@@ -39,20 +41,20 @@ namespace WebApplication.Data
             }
         }
 
-        public User sendRegisterRequest()
+        public async Task sendRegisterRequest()
         {
-            string resultstring;
+
             User newuser = new User("Ati","yells", "at", "everyone", "always", true);
-            RestClient client = new RestClient("http://localhost:65505/api/Users");
-            RestRequest request = new RestRequest(Method.POST);
-            request.AddParameter("user", newuser);
+            var json = JsonConvert.SerializeObject(newuser);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-            IRestResponse response = client.Execute(request);
-            resultstring = response.Content;
+            var url = "https://localhost:44345/api/Users";
+            using var client = new HttpClient();
 
-            var result = JsonConvert.DeserializeObject<User>(resultstring);
+            var response = await client.PostAsync(url, data);
 
-            return result;
+            string result = response.Content.ReadAsStringAsync().Result;
+
 
         }
     }

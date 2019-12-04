@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CompareIT_API.Model;
+using ManagingUsers.Models.Domain;
 
-namespace CompareIT_API.Model
+namespace ManagingUsers.Models
 {
     public class ModelManager
     {
@@ -13,7 +13,7 @@ namespace CompareIT_API.Model
 
         public void ListOfAllUsers()
         {
-         userList.loadUsers();   
+            userList.loadUsers();
         }
 
         public void ListofAllWishes(String username)
@@ -23,7 +23,7 @@ namespace CompareIT_API.Model
 
         public void registerNewUser(string Firstname, string Lasttname, string Username, string Password, string Email, bool IsAdmin, WishList wish)
         {
-            User user= new User(Firstname, Lasttname, Username,Password, Email,IsAdmin,wish );
+            User user = new User(Firstname, Lasttname, Username, Password, Email, IsAdmin, wish);
         }
 
         public void removeUser(User user)
@@ -31,10 +31,10 @@ namespace CompareIT_API.Model
             userList.removeUser(user);
         }
 
-        public void AddWish(string URL, Wish wish)
+        public void AddWish(String Title, string URL_)
         {
-            wishList.registerWish(URL);
-            
+            wishList.registerWish(Title,URL_);
+
         }
 
         public void DeleteWish(Wish wish)
@@ -49,14 +49,16 @@ namespace CompareIT_API.Model
 
         //--------------------------------------------------------------------------------------------
 
-/*
-        public void logOff() 
-        {
-        user.logOff(this.user);
+        /*
+                public void logOff() 
+                {
+                user.logOff(this.user);
 
-        }
+                }
 
-*/
+        */
 
+    }
 }
+    }
 }

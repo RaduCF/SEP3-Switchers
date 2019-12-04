@@ -11,9 +11,9 @@ namespace CompareIT_API.Model
         public string Password { get; set; }
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
-        public  WishList wish { get; set; }
+       // public  WishList wish { get; set; }
 
-        public User(string Firstname, string Lasttname, string Username, string Password, string Email, bool IsAdmin, WishList wish)
+        public User(string Firstname, string Lasttname, string Username, string Password, string Email, bool IsAdmin/*, WishList wish*/)
         {
             this.Firstname = Firstname;
             this.Lastname = Lastname;
@@ -21,56 +21,27 @@ namespace CompareIT_API.Model
             this.Password = Password;
             this.Email = Email;
             this.IsAdmin = false;
-            this.wish= new WishList();
+           // this.wish= new WishList();
             
         }
 
-        public string getUsername()
-        {
-            return Username;
-        }
+       
 
-        public string ToString()
+       /* public string ToString()
         {
             return $"Firstname: {Firstname}\n" +
                    $"Lastname: {Lastname}\n" +
                    $"Username: {Username}\n" +
                    $"Password: {Password}\n" +
                    $"Email: {Email}\n" +
-                   $"IsAdmin: {IsAdmin}\n" +
+                   $"IsAdmin: {IsAdmin}\n" 
                    $"wishList: {wish}";
+        }*/
 
-        }
-
-        public String GetFirstname()
+       /* public void RegisterWish(string URL)
         {
-            return Firstname;
-        }
-
-        public String GetLastname()
-        {
-            return Lastname;
-        }
-
-        public String GetUsername()
-        {
-            return Username;
-        }
-
-        public String GetPassword()
-        {
-            return Password;
-        }
-
-        public String GetEmail()
-        {
-            return Email;
-        }
-
-        public bool GetIsAdmin()
-        {
-            return IsAdmin;
-        }
+            wish.registerWish(URL);
+        }*/
 
       
 

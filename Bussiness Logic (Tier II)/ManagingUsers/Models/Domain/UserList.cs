@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CompareIT_API.Model
+namespace ManagingUsers.Models.Domain
 {
     public class UserList: ModelManager
     {
-        public List<User> userList{ get; set; }
+        public List<User> userList { get; set; }
 
 
         // shows the whole list with their properties. 
-        public void loadUsers() 
+        public void loadUsers()
         {
             foreach (var user in userList)
             {
@@ -33,7 +33,7 @@ namespace CompareIT_API.Model
 
         public void registerUser(string Firstname, string Lasttname, string Username, string Password, string Email, bool IsAdmin, WishList wish)
         {
-            User user= new User( Firstname,  Lasttname,  Username,  Password,  Email,  IsAdmin,  wish);
+            User user = new User(Firstname, Lasttname, Username, Password, Email, IsAdmin, wish);
             userList.Add(user);
         }
 
@@ -45,7 +45,7 @@ namespace CompareIT_API.Model
                 {
                     userList.Remove(user);
                 }
-                
+
             }
 
         }
@@ -66,11 +66,11 @@ namespace CompareIT_API.Model
             foreach (var client in userList)
             {
                 if
-                    (
+                (
                     (user.GetUsername().Equals(client.GetUsername()))
                     ||
                     (user.GetPassword().Equals(client.GetPassword()))
-                    )
+                )
                 {
                     return true;
                 }
@@ -79,3 +79,6 @@ namespace CompareIT_API.Model
         }
     }
 }
+
+    
+

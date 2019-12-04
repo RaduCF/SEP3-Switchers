@@ -60,11 +60,11 @@
 
 
 <button type="submit" id="register" @onclick="Register">Register</button>
-<p>@user.FirstName @user.LastName   @shting</p>
+<p>@user @shting</p>
 
 @code{
     private ExampleModel exampleModel = new ExampleModel();
-    public User user { get; set; } = new User();
+    public string user { get; set; } = "";
     string shting = "";
 
     public void HandleValidSubmit()
@@ -86,6 +86,6 @@
     public void Register()
     {
         shting = "Works";
-        user = connection.sendRegisterRequest();
+        connection.sendRegisterRequest();
     }
 }

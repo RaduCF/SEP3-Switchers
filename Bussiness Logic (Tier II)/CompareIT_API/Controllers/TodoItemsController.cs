@@ -1,18 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
-using CompareIT_API.Model;
-using CustomAPI_V4;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace CompareIT_API
+namespace CompareIT_API.Controllers
 {
-        [Route("api/TodoItems")]
-    public class TodoItemsController : ControllerBase
+    public class TodoItemsController
     {
         private readonly TodoContext context;
         private CompareIT compare = new CompareIT(); // connection to the tier2
