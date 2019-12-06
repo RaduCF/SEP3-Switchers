@@ -21,7 +21,7 @@ public class UserList {
     }
     public void removeUser(User user){
 
-          // if(userList.get(i).getUsername().equals(user.getUsername()))
+          // if(userList.get(i).getID().equals(user.getID()))
             if (userList.contains(user)){
                 userList.remove(user);
             }

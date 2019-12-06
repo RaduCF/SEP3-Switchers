@@ -17,6 +17,8 @@ public interface ICompare_Database
         void removeWish(Wish wish) throws SQLException;*/
         void registerUser(User user) throws SQLException;
         void removeUser(User user) throws SQLException;
+        boolean userExists(String username)throws  SQLException;
+        boolean validateLogin(String username, String password) throws SQLException;
 
 
     }

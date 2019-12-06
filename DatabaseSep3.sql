@@ -22,5 +22,6 @@ CREATE TABLE if not exists Public.Wish
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 );
-select * from Users;
+select username from Users where username='gav';
 drop table Users cascade ;
+select * from users;

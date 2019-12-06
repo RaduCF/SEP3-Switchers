@@ -5,17 +5,17 @@ import java.io.Serializable;
 public class User implements Serializable {
     private String FirstName;
     private String LastName;
-    private String Username;
+    private String ID;
     private String Password;
     private String Email;
     private boolean IsAdmin;
     // private WishList wish;
 
 
-    public User(String firstName, String lastName, String username, String password, String email, boolean isAdmin) {
+    public User(String firstName, String lastName, String ID, String password, String email, boolean isAdmin) {
         this.FirstName = firstName;
         this.LastName = lastName;
-        this.Username = username;
+        this.ID = ID;
         this.Password = password;
         this.Email = email;
         this.IsAdmin = false;
@@ -38,12 +38,12 @@ public class User implements Serializable {
         this.LastName = lastName;
     }
 
-    public String getUsername() {
-        return Username;
+    public String getID() {
+        return ID;
     }
 
-    public void setUsername(String username) {
-        this.Username = username;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getPassword() {
@@ -88,7 +88,7 @@ public class User implements Serializable {
         return "User{" +
                 "firstName='" + FirstName + '\'' +
                 ", lastName='" + LastName + '\'' +
-                ", username='" + Username + '\'' +
+                ", username='" + ID + '\'' +
                 ", password='" + Password + '\'' +
                 ", email='" + Email + '\'' +
                 ", isAdmin=" + IsAdmin +

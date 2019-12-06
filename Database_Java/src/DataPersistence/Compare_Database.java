@@ -1,9 +1,6 @@
 package DataPersistence;
 
 import domain.User;
-import domain.UserList;
-import domain.Wish;
-import domain.WishList;
 import utility.persistence.MyDatabase;
 
 import java.sql.SQLException;
@@ -30,6 +27,7 @@ public class Compare_Database implements ICompare_Database {
             e.printStackTrace();
         }
     }
+
 
     //The method simply creates a list of users from the database in order to be used in the model.
 
@@ -72,7 +70,7 @@ public class Compare_Database implements ICompare_Database {
         {
             String newWish = "INSERT INTO public.Wish(url,username)" +
                     "VALUES( ?,?);";
-            db.update(newWish, wish.getUsername(), wish.getUrl());
+            db.update(newWish, wish.getID(), wish.getUrl());
         }
 
         //This method removes a wish
@@ -82,37 +80,36 @@ public class Compare_Database implements ICompare_Database {
             String sql = "DELETE FROM public.Wish where username=?;";
             int myCount = 0;
 
-            ArrayList<Object[]> rows = db.query(count, wish.getUsername());
+            ArrayList<Object[]> rows = db.query(count, wish.getID());
             myCount = Integer.parseInt(rows.get(0)[0].toString());
             if (myCount > 1)
             {
-                db.update(sql, wish.getUrl(), wish.getUsername());
+                db.update(sql, wish.getUrl(), wish.getID());
             } else {
 
             }
         }*/
     //This is a private method which loads only one user by passing a username as an argument and return one user.
 
-    public synchronized User loadOneUser(String username) throws SQLException
-    {
+    public synchronized User loadOneUser(String username) throws SQLException {
         String sql = "SELECT Users.username, Users.password,Users.firstname,Users.lastname,Users.email,Users.isAdmin " +
-                "FROM Public.Users WHERE username=?; " ;
+                "FROM Public.Users WHERE username=?; ";
 
         User user = null;
 
         ArrayList<Object[]> user1 = db.query(sql, username);
-        for (int i = 0; i < user1.size(); i++)
-        {
+        for (int i = 0; i < user1.size(); i++) {
             Object[] array = user1.get(i);
-            user = new User(array[0] + "", array[1] + "", array[2] + "", array[3] + "", array[4] + "",( boolean)array[5] );
+            user = new User(array[0] + "", array[1] + "", array[2] + "", array[3] + "", array[4] + "", (boolean) array[5]);
         }
         return user;
     }
 
     //This method adds a user
     public synchronized void registerUser(User user) throws SQLException {
+
         String person = "INSERT INTO Public.Users(username,password,firstname,lastname,email,isAdmin) VALUES (?,?,?,?,?,?);";
-        db.update(person, user.getUsername(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getEmail(), user.isAdmin());
+        db.update(person, user.getID(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getEmail(), user.isAdmin());
 
         System.out.println("this is done");
     }
@@ -121,9 +118,45 @@ public class Compare_Database implements ICompare_Database {
     //This method deletes a specific user
     public synchronized void removeUser(User user) throws SQLException {
         String sql = "DELETE FROM Public.Users WHERE username=?;";
-        db.update(sql, user.getUsername());
+        db.update(sql, user.getID());
     }
 
+    @Override
+    public synchronized boolean userExists(String username) throws SQLException {
+        String sql = "SELECT username FROM Public.Users  WHERE username=?;";
+
+        ArrayList<Object[]> id = db.query(sql, username);
+        if (id != null) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    @Override
+    public synchronized boolean validateLogin(String username, String password) throws SQLException {
+        String sql = "SELECT username, password FROM Public.Users WHERE username=? ;";
+        ArrayList<Object[]> user = db.query(sql, username);
+
+        for (int i = 0; i < user.size(); i++) {
+            Object[] array = user.get(i);
+            String us = array[0] + "";
+            String ps = array[1] + "";
+
+
+            if (us.equals(username)) {
+                if (ps.equals(password)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+//
+
+
+    }
 }
 
 
