@@ -1,23 +1,27 @@
 package domain;
 
-public class Login {
+import com.sun.source.doctree.SerialDataTree;
+
+import java.io.Serializable;
+
+public class Login implements Serializable {
     private String ID;
-    private  String password;
+    private  String Password;
 
     public Login(String username,String password){
         this.ID=username;
-        this.password=password;
+        this.Password=password;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
     @Override
     public String toString() {
         return "Login{" +
                 "ID='" + ID + '\'' +
-                ", password='" + password + '\'' +
+                ", password='" + Password + '\'' +
                 '}';
     }
 

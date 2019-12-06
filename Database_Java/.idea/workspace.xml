@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DataPersistence/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="41">
+              <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,11 +42,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+            <state relative-caret-position="159">
+              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#256#257#0" expanded="true" />
                 <element signature="e#287#288#0" expanded="true" />
+                <element signature="e#256#257#0" expanded="true" />
                 <element signature="e#287#288#0" expanded="true" />
               </folding>
             </state>
@@ -56,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-466">
+            <state relative-caret-position="-541">
               <caret line="40" column="23" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="23" />
             </state>
           </provider>
@@ -134,12 +136,12 @@
         <option value="$PROJECT_DIR$/src/DataPersistence/ICompare_Database.java" />
         <option value="$PROJECT_DIR$/src/DataPersistence/Compare_DatabaseTest.java" />
         <option value="$PROJECT_DIR$/src/DataPersistence/Compare_Database.java" />
-        <option value="$PROJECT_DIR$/src/domain/Login.java" />
         <option value="$PROJECT_DIR$/src/DataPersistence/ClientHandler.java" />
+        <option value="$PROJECT_DIR$/src/domain/Login.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="856" />
     <option name="width" value="1070" />
     <option name="height" value="1039" />
@@ -188,7 +190,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575669781725" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575675889790" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -327,7 +329,7 @@
       <workItem from="1575022097980" duration="4990000" />
       <workItem from="1575360572879" duration="14192000" />
       <workItem from="1575446938407" duration="8038000" />
-      <workItem from="1575497896797" duration="27566000" />
+      <workItem from="1575497896797" duration="29719000" />
     </task>
     <servers />
   </component>
@@ -364,7 +366,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90662000" />
+    <option name="totallyTimeSpent" value="92815000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,9 +378,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31073827" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31073827" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -387,7 +390,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3252841" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3252841" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -542,18 +545,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-466">
+        <state relative-caret-position="-541">
           <caret line="40" column="23" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        <state relative-caret-position="159">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#256#257#0" expanded="true" />
             <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
             <element signature="e#287#288#0" expanded="true" />
           </folding>
         </state>
@@ -561,8 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataPersistence/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="41">
+          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
