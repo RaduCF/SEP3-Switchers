@@ -115,17 +115,17 @@ namespace UserAPI.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost("{id}")]
-        public ActionResult<string> PostLogin(string id, string password)
+        public async Task<ActionResult<Login>> PostUser(Login login)
         {
             Console.WriteLine("test");
-            /* _context.Users.Add(user);
+            _context.Login.Add(login);
              try
              {
                  await _context.SaveChangesAsync();
              }
              catch (DbUpdateException)
              {
-                 if (UserExists(user.ID))
+                 if (UserExists(login.ID))
                  {
                      return Conflict();
                  }
@@ -133,11 +133,11 @@ namespace UserAPI.Controllers
                  {
                      throw;
                  }
-             }*/
+             }
 
-            manager.Login(id, password);
+            manager.Login(login);
 
-            return CreatedAtAction("GetUser", new { id = id ,password=password});
+            return CreatedAtAction("GetUser", new { id = login }, login);
 
         }
         //--------------------------------------------------

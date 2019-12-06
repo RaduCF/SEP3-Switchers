@@ -10,6 +10,8 @@ namespace UserAPI.Model
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Login>Login { get; set; }
+
 
 
     }

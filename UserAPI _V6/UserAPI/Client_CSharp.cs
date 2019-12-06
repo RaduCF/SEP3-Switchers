@@ -20,25 +20,16 @@ namespace UserAPI
         {
             clientSocket.Connect(serverAddress);
         }
-         public void Send(string ID, string Password) // sending to tier 3
-          {   //this should send two strings in an array and be received by tier3 and convert it to 
-            //login object with having only username and password the controller need some word
-            //in order to send both parameters , right now in java I can get only the username and the password is null
-            //and it does not convet it to login object
-
-            var loginInof = new string[2];
-            loginInof[0] = ID;
-            loginInof[1] = Password;
-
-            json = System.Text.Json.JsonSerializer.Serialize(loginInof);
-          
-             toSendLen = System.Text.Encoding.ASCII.GetByteCount(json);
-           toSendBytes = System.Text.Encoding.ASCII.GetBytes(json);
-             toSendLenBytes = System.BitConverter.GetBytes(toSendLen);
+         public void Send(Login login) 
+          {  
+           json = System.Text.Json.JsonSerializer.Serialize(login);
+            toSendLen = System.Text.Encoding.ASCII.GetByteCount(json);
+            toSendBytes = System.Text.Encoding.ASCII.GetBytes(json);
+            toSendLenBytes = System.BitConverter.GetBytes(toSendLen);
             clientSocket.Send(toSendLenBytes);
             clientSocket.Send(toSendBytes);
-                      
             ReceiveMessage();
+
         }
 
         public void RegisterUser(User user)

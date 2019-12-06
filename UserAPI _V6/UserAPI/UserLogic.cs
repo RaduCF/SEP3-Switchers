@@ -54,9 +54,9 @@ namespace UserAPI
              return loggedIn;
          }*/
 
-        public void Login(string ID, string Password)
+        public void Login(Login login)
         {
-            client.Send(ID, Password); // sending to be checked in tier 3
+            client.Send(login); // sending to be checked in tier 3
           /*  if (client.ReceiveMessage()) //if both ID and Password are true
             {
                 loggedIn = true;
