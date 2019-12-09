@@ -5,19 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using UserAPI.Model;
 
 namespace UserAPI.Controllers
 {
     [Route("api/Users")]
     [ApiController]
-
-    //[Route("api/Users")]
-
     public class UsersController : ControllerBase
     {
-        private readonly UserContext _context; //private Client_CSharp client;
+        private readonly UserContext _context;
         private UserLogic manager = new UserLogic();
 
         public UsersController(UserContext context)
@@ -26,15 +22,72 @@ namespace UserAPI.Controllers
             manager = new UserLogic();
         }
 
+        //registering new user both into in-memory and database
+        // POST: api/Users
+        [HttpPost]
+        public async Task<ActionResult<User>> PostUser(User user)
+        {
+            _context.Users.Add(user);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (UserExists(user.ID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            manager.RegisterUser(user);
+            return CreatedAtAction("GetUser", new { id = user.ID }, user);
+        }
+
+
+        //login to database
+        // POST: api/Users/login
+        [HttpPost("{id}")]
+        public async Task<ActionResult<Login>> PostLogin(Login login)
+        {
+            Console.WriteLine("test");
+            _context.Login.Add(login);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (UserExists(login.ID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            manager.Login(login);
+
+            return CreatedAtAction("GetUser", new { id = login }, login);
+
+        }
+
+
+        //--------------------------------------------------------------------------------------------------// 
+
         // GET: api/Users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
-            // return manager.ReceiveMessage(msg);
         }
 
-        // GET: api/Users/2
+        // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(string id)
         {
@@ -80,67 +133,7 @@ namespace UserAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
-        {
-            Console.WriteLine("test");
-            _context.Users.Add(user);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (UserExists(user.ID))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            manager.RegisterUser(user);
-
-            return CreatedAtAction("GetUser", new { id = user }, user);
-
-        }
-
-        //--------------------------------------------------------------------------------------------
-        // POST: api/Users
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost("{id}")]
-        public async Task<ActionResult<Login>> PostUser(Login login)
-        {
-            Console.WriteLine("test");
-            _context.Login.Add(login);
-             try
-             {
-                 await _context.SaveChangesAsync();
-             }
-             catch (DbUpdateException)
-             {
-                 if (UserExists(login.ID))
-                 {
-                     return Conflict();
-                 }
-                 else
-                 {
-                     throw;
-                 }
-             }
-
-            manager.Login(login);
-
-            return CreatedAtAction("GetUser", new { id = login }, login);
-
-        }
-        //--------------------------------------------------
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
@@ -164,3 +157,4 @@ namespace UserAPI.Controllers
         }
     }
 }
+

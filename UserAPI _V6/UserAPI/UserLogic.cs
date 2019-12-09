@@ -15,35 +15,46 @@ namespace UserAPI
         }
 
         //validate the registration
-       /* public void Validate(User user) // not sure about the parameter user
+        //check if we can send user or should be string
+       /* public bool Validate(User user) // not sure about the parameter user
         {
-            Send(user);
+            //  client.SendID(ID);
+            client.RegisterUser(user);
 
-            if (client.ReceiveMessage())// Recivemessage contain is a boolean if the ID already exist in database
-            {
+            if (client.ReciveVerification().Equals(true))// Recivemessage contains a boolean if the ID already exist in database
+            {Console.WriteLine("User already exist");
                 throw new System.ArgumentException("User already exist");
+                
+
             }
-            else if (user.Password == null || user.Password.Length < 6)
+            else if (user.Password == null ||user.Password.Length < 6)
             {
+                Console.WriteLine("incorrect Password");
                 throw new System.ArgumentException("Password must contain at least 6 characters");
             }
-            else if (user.FirstName == null || user.LastName == null || user.Email == null || user.IsAdmin == null)
+            else if (user.FirstName == null || user.LastName == null || user.Email == null)
             {
                 throw new System.ArgumentException("Please fill out the form before submitting");
             }
+            else
+            { return true;
+            }
         }*/
-        /*public void Send<T>(T value, T value2) // a generic method to send info to tier 3 through Client_Csharp
+
+
+        /*public void SendID(string ID) // a method to send the ID to check if the ID already exist 
         {
-            client.Send(value);
+            client.Send(ID);
         }*/
 
 
         public void RegisterUser(User user)
         {
-           // if (Validate(user))
+            //if (Validate(user).Equals(true))
+            //{
+                client.RegisterUser(user);
+           //}
 
-              client.RegisterUser(user);
-           // client.ReceiveMessage(); // to receive a confirmation for registeration
         }
 
 
@@ -56,16 +67,15 @@ namespace UserAPI
 
         public void Login(Login login)
         {
-            client.Send(login); // sending to be checked in tier 3
-          /*  if (client.ReceiveMessage()) //if both ID and Password are true
+        client.SendLogin(login); // sending to be checked in tier 3
+            if (client.ReciveVerification().Equals(true) )//if login message is true
             {
                 loggedIn = true;
             }
             else
             {
                 throw new System.ArgumentException("Password is not correct");
-            }*/
+            }
         }
 
-    }
-}
+    }}

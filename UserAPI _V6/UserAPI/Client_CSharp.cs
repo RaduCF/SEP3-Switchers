@@ -20,32 +20,50 @@ namespace UserAPI
         {
             clientSocket.Connect(serverAddress);
         }
-         public void Send(Login login) 
+         public void Send<T>(T value) 
           {  
-           json = System.Text.Json.JsonSerializer.Serialize(login);
+           json = System.Text.Json.JsonSerializer.Serialize(value);
             toSendLen = System.Text.Encoding.ASCII.GetByteCount(json);
             toSendBytes = System.Text.Encoding.ASCII.GetBytes(json);
             toSendLenBytes = System.BitConverter.GetBytes(toSendLen);
             clientSocket.Send(toSendLenBytes);
             clientSocket.Send(toSendBytes);
-            ReceiveMessage();
+         
 
+        }
+        public void SendLogin (Login login)
+        {
+            Send(login);
+            ReciveVerification();
+            
         }
 
         public void RegisterUser(User user)
         {
-
-
-             json = System.Text.Json.JsonSerializer.Serialize(user);
-            toSendLen = System.Text.Encoding.ASCII.GetByteCount(json);
-            toSendBytes = System.Text.Encoding.ASCII.GetBytes(json);
-            toSendLenBytes = System.BitConverter.GetBytes(toSendLen);
-            clientSocket.Send(toSendLenBytes);
-            clientSocket.Send(toSendBytes);
+            Send(user);
             ReceiveMessage();
+
+            
         }
+       
         public void ReceiveMessage() { 
-           
+            byte[] rcvLenBytes = new byte[4];
+            clientSocket.Receive(rcvLenBytes);
+            int rcvLen = System.BitConverter.ToInt32(rcvLenBytes, 0);
+            byte[] rcvBytes = new byte[rcvLen];
+            clientSocket.Receive(rcvBytes);
+            
+            String rcv = System.Text.Encoding.ASCII.GetString(rcvBytes);
+            Console.WriteLine("Client received: " + rcv);
+
+            clientSocket.Close();
+                }
+       
+        
+    
+       
+        public  bool ReciveVerification()
+        {
             byte[] rcvLenBytes = new byte[4];
             clientSocket.Receive(rcvLenBytes);
             int rcvLen = System.BitConverter.ToInt32(rcvLenBytes, 0);
@@ -53,18 +71,13 @@ namespace UserAPI
             clientSocket.Receive(rcvBytes);
             String rcv = System.Text.Encoding.ASCII.GetString(rcvBytes);
 
-            Console.WriteLine("Client received: " + rcv);
-
-           // clientSocket.Close();
-                }
-        
-
-        /* public void UserExists(User user)
-         {
-             //something here
-         }*/
+            bool result= rcv.Equals("true");
+            Console.WriteLine("Result>>>>"+result);
+            return result;
+            
+            
+        }
 
 
-        
     }
 }
