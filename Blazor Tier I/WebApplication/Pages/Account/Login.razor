@@ -33,8 +33,8 @@
         // TODO get and verify username and password here against database
         try
         {
-            //connection.sendLoginRequest(_username, _password);
-            var interop = new Interop(jsRuntime);
+            connection.sendLoginRequest(_username, _password);
+            /*var interop = new Interop(jsRuntime);
             string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
 
             // Here I provide fields matching the arguments of my login method, in LoginRequester.cshtml.cs
@@ -42,7 +42,7 @@
 
             // Here I make a call to the loginRequester.cshtml.cs, the post method, with fields as argument.
             // it happens through the Interop.cs class
-            await interop.SubmitForm("/loginRequester/", fields);
+            await interop.SubmitForm("/loginRequester/", fields);*/
         }
         catch (Exception e)
         {

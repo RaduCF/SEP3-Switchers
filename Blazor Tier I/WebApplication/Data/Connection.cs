@@ -41,7 +41,7 @@ namespace WebApplication.Data
         }
         public async Task sendRegisterRequest(string firstName,string lastName, string username, string password, string email)
         {
-            User newuser = new User("Ati","yells", "at", "everyone", "always", false);
+            User newuser = new User(firstName, lastName, username, password, email, false);
             var json = JsonConvert.SerializeObject(newuser);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -58,17 +58,15 @@ namespace WebApplication.Data
         }
         public async Task sendLoginRequest(string username, string password)
         {
-            List<string> info = new List<string>();
-            info.Add(username);
-            info.Add(password);
+            Login info = new Login{ ID=username, Password=password };
             var json = JsonConvert.SerializeObject(info);
 
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-            //var url = "https://localhost:44345/api/Users";
-            //using var client = new HttpClient();
+            var url = "https://localhost:44345/api/Users/Radu";
+            using var client = new HttpClient();
 
-            //var response = await client.PostAsync(url, data);
+            var response = await client.PostAsync(url, data);
 
             string result = "";//response.Content.ReadAsStringAsync().Result;
             if (result.Equals("wrong username"))
