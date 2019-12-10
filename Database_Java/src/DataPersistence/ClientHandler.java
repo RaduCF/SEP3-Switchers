@@ -41,17 +41,21 @@ public class ClientHandler implements Runnable {
             in.read(receivedBytes, 0, len);
             String received = new String(receivedBytes, 0, len);
             System.out.println("Server received: " + received);
-            // User receive = gson.fromJson(received, User.class);
+            User reg = gson.fromJson(received, User.class);
             Login receive = gson.fromJson(received, Login.class);
 
+             System.out.println(reg.toString());
             System.out.println(receive.toString());
-            //register(receive);
-            boolean exist = validateLogin(receive.getID(), receive.getPassword());
 
+            boolean exist = validateLogin(receive.getID(), receive.getPassword());
+            System.out.println(exist);
+            register(reg);
+
+            //String replyMsg = "Success";
             //send
 
-            boolean reply = exist;
-            String toSend = "Echo: " + reply;
+            boolean replyMsg = exist;
+            String toSend = "" + replyMsg;
             byte[] toSendBytes = toSend.getBytes();
             int toSendLen = toSendBytes.length;
             byte[] toSendLenBytes = new byte[4];

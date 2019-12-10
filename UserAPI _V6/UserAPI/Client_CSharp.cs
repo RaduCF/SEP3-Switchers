@@ -14,11 +14,11 @@ namespace UserAPI
         private byte[] toSendBytes;
         private byte[] toSendLenBytes;
         private int toSendLen;
-        private IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse("192.168.1.3"), 6789);
-
+        private IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse("10.152.208.85"), 6789);
+        
         public Client_CSharp()
         {
-            clientSocket.Connect(serverAddress);
+           clientSocket.Connect(serverAddress);
         }
          public void Send<T>(T value) 
           {  
@@ -38,12 +38,16 @@ namespace UserAPI
             
         }
 
-        public void RegisterUser(User user)
+        public void SendUser(User user)
         {
             Send(user);
             ReceiveMessage();
 
             
+        }
+         public void SendID(string ID)
+        {
+            Send(ID);
         }
        
         public void ReceiveMessage() { 
