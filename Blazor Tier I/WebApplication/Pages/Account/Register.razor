@@ -1,5 +1,74 @@
-﻿<h3>Register</h3>
+﻿@page "/Register"
+
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+@inject WebApplication.Data.Connection connection
+@inject IJSRuntime jsRuntime
+
+<div class="text-center">
+    <h1 style="margin-top:13%;">Register:</h1>
+    <br />
+    <div class="form-group">
+        <label style="font-size:24px;">First Name:</label>
+        <input type="text" placeholder="Name" @bind-value="firstName" required />
+    </div>
+    <div class="form-group">
+        <label style="font-size:24px;">Last Name:</label>
+        <input type="text" placeholder="Name" @bind-value="lastName" required />
+    </div>
+    <div class="form-group" style="margin-left:-1%;">
+        <label style="font-size:24px;">User name:</label>
+        <input type="text" placeholder="User name" @bind-value="_username" required />
+    </div>
+    <div class="form-group" style="margin-left:-0.29%;">
+        <label style="font-size:24px;">Password: </label>
+        <input type="password" placeholder="Password" @bind-value="_password" required />
+    </div>
+    <div class="form-group" style="margin-left:3.4%;">
+        <label style="font-size:24px;">Email:</label>
+        <input type="text" placeholder="example@gmail.com" @bind-value="email" required />
+    </div>
+
+    <p style="font-size:20px; color:red; font-weight:500;">@errormessage</p>
+
+    <button style="font-size:20px;" class="btn btn-primary" @onclick="PerformRegister">Register</button>
+    <button style="font-size:20px;" class="btn btn-primary" @onclick="Cancel">Cancel</button>
+</div>
 
 @code {
+    private string firstName;
+    private string lastName;
+    private string _username;
+    private string _password;
+    private string email;
 
+    private string errormessage = "";
+
+    public async Task PerformRegister()
+    {
+        try
+        {
+            connection.sendRegisterRequest(firstName, lastName, _username, _password, email);
+            /*var interop = new Interop(jsRuntime);
+            string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
+
+            // Here I provide fields matching the arguments of my login method, in LoginRequester.cshtml.cs
+            var fields = new { __RequestVerificationToken = antiforgerytoken, username = _username, password = _password };
+
+            // Here I make a call to the loginRequester.cshtml.cs, the post method, with fields as argument.
+            // it happens through the Interop.cs class
+            await interop.SubmitForm("/loginRequester/", fields);*/
+        }
+        catch (Exception e)
+        {
+            if (e.Message.Equals("Username already used."))
+            {
+                errormessage = e.Message;
+            }
+        }
+
+    }
+    public void Cancel()
+    {
+        NavigationManager.NavigateTo("/");
+    }
 }

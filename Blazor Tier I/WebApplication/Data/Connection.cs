@@ -11,7 +11,6 @@ namespace WebApplication.Data
 {
     public class Connection
     {
-
         public List<Item> Final { get; set; } = new List<Item>();
 
         public void GetItems(string search)
@@ -40,11 +39,9 @@ namespace WebApplication.Data
                 }
             }
         }
-
-        public async Task sendRegisterRequest()
+        public async Task sendRegisterRequest(string firstName,string lastName, string username, string password, string email)
         {
-
-            User newuser = new User("Ati","yells", "at", "everyone", "always", true);
+            User newuser = new User(firstName, lastName, username, password, email, false);
             var json = JsonConvert.SerializeObject(newuser);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -54,8 +51,33 @@ namespace WebApplication.Data
             var response = await client.PostAsync(url, data);
 
             string result = response.Content.ReadAsStringAsync().Result;
+            if (result.Equals("Username already used."))
+            {
+                throw new Exception("Username already used.");
+            }
+        }
+        public async Task sendLoginRequest(string username, string password)
+        {
+            Login info = new Login{ ID=username, Password=password };
+            var json = JsonConvert.SerializeObject(info);
 
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
 
+            var url = "https://localhost:44345/api/Users/Radu";
+            using var client = new HttpClient();
+
+            var response = await client.PostAsync(url, data);
+
+            string result = "";//response.Content.ReadAsStringAsync().Result;
+            if (result.Equals("wrong username"))
+            {
+                throw new Exception("invalid username");
+            }
+            else if (result.Equals("wrong password"))
+            {
+                throw new Exception("invalid password");
+            }
+            else { return; }
         }
     }
 }

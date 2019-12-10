@@ -6,14 +6,12 @@
     #titlediv {
         margin-top: 20%;
     }
-
     #searchdiv {
         width: 50%;
         height: 20%;
         margin: auto;
         margin-top: 5%;
     }
-
     #searchbar {
         width: 80%;
         padding: 12px 20px;
@@ -21,7 +19,6 @@
         border: 1px solid #ccc;
         border-radius: 11px;
     }
-
     #submit {
         float: right;
         width: 19.5%;
@@ -32,6 +29,8 @@
         margin-left: 0.5%;
     }
 </style>
+
+<!--
 <AuthorizeView>
     <Authorized>
         <p>Logged in</p>
@@ -41,6 +40,7 @@
         <LoginDisplay />
     </NotAuthorized>
 </AuthorizeView>
+ -->
 
 <div id="titlediv" class="text-center">
     <h1 class="display-2">CompareIT</h1>
@@ -57,10 +57,6 @@
         <button type="submit" id="submit" @onclick="HandleValidSubmit">Search</button>
     </EditForm>
 </div>
-
-
-<button type="submit" id="register" @onclick="Register">Register</button>
-<p>@user @shting</p>
 
 @code{
     private ExampleModel exampleModel = new ExampleModel();
@@ -82,10 +78,5 @@
             }
         }
 
-    }
-    public void Register()
-    {
-        shting = "Works";
-        connection.sendRegisterRequest();
     }
 }
