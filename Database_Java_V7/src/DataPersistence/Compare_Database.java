@@ -111,7 +111,7 @@ public class Compare_Database implements ICompare_Database {
         String person = "INSERT INTO Public.Users(username,password,firstname,lastname,email,isAdmin) VALUES (?,?,?,?,?,?);";
         db.update(person, user.getID(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getEmail(), user.isAdmin());
 
-        System.out.println("this is done");
+        System.out.println("Added to database");
     }
 
 
@@ -126,8 +126,9 @@ public class Compare_Database implements ICompare_Database {
         String sql = "SELECT username FROM Public.Users  WHERE username=?;";
 
         ArrayList<Object[]> id = db.query(sql, username);
-        if (id != null) {
+        if (id !=null) {
             return true;
+
         } else {
             return false;
         }
@@ -147,13 +148,14 @@ public class Compare_Database implements ICompare_Database {
 
             if (us.equals(username)) {
                 if (ps.equals(password)) {
+                    System.out.println("login is validated!");
                     return true;
                 }
             }
         }
 
+        System.out.println("wrong ID or password!");
         return false;
-
 
 
     }

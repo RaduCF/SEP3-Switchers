@@ -8,47 +8,45 @@ namespace UserAPI
 {
     public class Client_CSharp
     {
-        private byte[] data = new byte[1024];
         private Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         private string json;
         private byte[] toSendBytes;
         private byte[] toSendLenBytes;
         private int toSendLen;
-        private IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse("10.152.208.85"), 6789);
+        private IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse("172.20.10.8"), 6789);
         
         public Client_CSharp()
         {
            clientSocket.Connect(serverAddress);
         }
-         public void Send<T>(T value) 
-          {  
-           json = System.Text.Json.JsonSerializer.Serialize(value);
+        
+        public void SendLogin (Login login)
+        {
+            json = System.Text.Json.JsonSerializer.Serialize(login);
+            json += "2";
             toSendLen = System.Text.Encoding.ASCII.GetByteCount(json);
             toSendBytes = System.Text.Encoding.ASCII.GetBytes(json);
             toSendLenBytes = System.BitConverter.GetBytes(toSendLen);
             clientSocket.Send(toSendLenBytes);
             clientSocket.Send(toSendBytes);
-         
-
-        }
-        public void SendLogin (Login login)
-        {
-            Send(login);
             ReciveVerification();
             
         }
 
         public void SendUser(User user)
         {
-            Send(user);
+            json = System.Text.Json.JsonSerializer.Serialize(user);
+            json += "1";
+            toSendLen = System.Text.Encoding.ASCII.GetByteCount(json);
+            toSendBytes = System.Text.Encoding.ASCII.GetBytes(json);
+            toSendLenBytes = System.BitConverter.GetBytes(toSendLen);
+            clientSocket.Send(toSendLenBytes);
+            clientSocket.Send(toSendBytes);
             ReceiveMessage();
 
             
         }
-         public void SendID(string ID)
-        {
-            Send(ID);
-        }
+        
        
         public void ReceiveMessage() { 
             byte[] rcvLenBytes = new byte[4];

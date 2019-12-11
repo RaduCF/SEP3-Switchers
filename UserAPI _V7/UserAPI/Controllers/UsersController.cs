@@ -25,7 +25,7 @@ namespace UserAPI.Controllers
         //registering new user both into in-memory and database
         // POST: api/Users
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task/*<ActionResult<User>>*/ PostUser(User user)
         {
             _context.Users.Add(user);
             try
@@ -36,7 +36,7 @@ namespace UserAPI.Controllers
             {
                 if (UserExists(user.ID))
                 {
-                    return Conflict();
+                    //return Conflict();
                 }
                 else
                 {
@@ -44,14 +44,14 @@ namespace UserAPI.Controllers
                 }
             }
             manager.RegisterUser(user);
-            return CreatedAtAction("GetUser", new { id = user.ID }, user);
+            //return CreatedAtAction("GetUser", new { id = user.ID }, user);
         }
 
 
         //login to database
         // POST: api/Users/login
         [HttpPost("{id}")]
-        public async Task<ActionResult<Login>> PostLogin(Login login)
+        public async Task<ActionResult<Login>>PostLogin(Login login)
         {
             Console.WriteLine("test");
             _context.Login.Add(login);
@@ -63,7 +63,7 @@ namespace UserAPI.Controllers
             {
                 if (UserExists(login.ID))
                 {
-                    return Conflict();
+                   return Conflict();
                 }
                 else
                 {
@@ -73,7 +73,7 @@ namespace UserAPI.Controllers
 
             manager.Login(login);
 
-            return CreatedAtAction("GetUser", new { id = login }, login);
+          return CreatedAtAction("GetUser", new { id = login }, login);
 
         }
 

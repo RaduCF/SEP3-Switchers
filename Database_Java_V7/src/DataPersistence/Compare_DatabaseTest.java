@@ -44,8 +44,8 @@ public class Compare_DatabaseTest {
 
     @Test
     public void validateLogin() throws SQLException {
-        String u="gav";
-        String p="momo";
+        String u="adam";
+        String p="jojrgvc";
         System.out.println(db.validateLogin(u,p));
 
     }
