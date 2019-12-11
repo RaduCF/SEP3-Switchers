@@ -49,16 +49,18 @@ namespace WebApplication.Data
             using var client = new HttpClient();
 
             var response = await client.PostAsync(url, data);
-            Console.WriteLine("Status code is: " + response);
+            Console.WriteLine("Status code is: " + response.StatusCode);
+            //string result = response.Content.ReadAsStringAsync().Result;
             
-            if (!response.IsSuccessStatusCode)
+            /*if (!response.IsSuccessStatusCode)
             {
                 return "User name is already in the system.";
             }
             else
             {
                 return "accepted";
-            }
+            }*/
+            return response.RequestMessage.ToString();
         }
         public async Task<string> sendLoginRequest(string username, string password)
         {
