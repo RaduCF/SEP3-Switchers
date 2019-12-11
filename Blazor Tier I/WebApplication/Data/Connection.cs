@@ -39,7 +39,7 @@ namespace WebApplication.Data
                 }
             }
         }
-        public async Task sendRegisterRequest(string firstName,string lastName, string username, string password, string email)
+        public async Task<string> sendRegisterRequest(string firstName,string lastName, string username, string password, string email)
         {
             User newuser = new User(firstName, lastName, username, password, email, false);
             var json = JsonConvert.SerializeObject(newuser);
@@ -53,10 +53,14 @@ namespace WebApplication.Data
             string result = response.Content.ReadAsStringAsync().Result;
             if (result.Equals("Username already used."))
             {
-                throw new Exception("Username already used.");
+                return "Username already used.";
+            }
+            else
+            {
+                return "accepted";
             }
         }
-        public async Task sendLoginRequest(string username, string password)
+        public async Task<string> sendLoginRequest(string username, string password)
         {
             Login info = new Login{ ID=username, Password=password };
             var json = JsonConvert.SerializeObject(info);
@@ -68,16 +72,19 @@ namespace WebApplication.Data
 
             var response = await client.PostAsync(url, data);
 
-            string result = "";//response.Content.ReadAsStringAsync().Result;
+            string result = response.Content.ReadAsStringAsync().Result;
             if (result.Equals("wrong username"))
             {
-                throw new Exception("invalid username");
+                return "invalid username";
             }
             else if (result.Equals("wrong password"))
             {
-                throw new Exception("invalid password");
+                return "invalid password";
             }
-            else { return; }
+            else 
+            { 
+                return "accepted"; 
+            }
         }
     }
 }
