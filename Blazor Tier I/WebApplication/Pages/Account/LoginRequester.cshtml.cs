@@ -20,7 +20,7 @@ namespace WebApplication.Pages.Account
             // TODO get claims here by username from database.
             var claims = new List<Claim>{
                 new Claim(ClaimTypes.Name, username),
-                new Claim("Role", "admin")
+                new Claim("Role", "user")
             };
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var principal = new ClaimsPrincipal(identity);
