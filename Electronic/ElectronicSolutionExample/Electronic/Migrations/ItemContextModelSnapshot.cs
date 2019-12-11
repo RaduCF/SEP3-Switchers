@@ -21,19 +21,25 @@ namespace Electronic.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("ImageURL")
                         .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
 
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("PriceCurrency")
+                        .HasColumnType("TEXT");
+
                     b.Property<double>("Rating")
                         .HasColumnType("REAL");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(60);
+
+                    b.Property<string>("URL")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

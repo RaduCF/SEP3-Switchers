@@ -18,43 +18,14 @@
                 </li>
                 <li class="nav-item">
                     <NavLink class="nav-link text-dark" href="Contact">
-                        <span class="oi oi-document" aria-hidden="true"></span> Contact
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> Contact
                     </NavLink>
                 </li>
-                <AuthorizeView>
-                    <NotAuthorized>
-                        <li class="nav-item">
-                            <NavLink class="nav-link text-dark" href="login">
-                                <span class="oi oi-account-login" aria-hidden="true"></span> Login
-                            </NavLink>
-                        </li>
-                    </NotAuthorized>
-                </AuthorizeView>
-                <AuthorizeView>
-                    <Authorized>
-                        <li class="nav-item">
-                            <NavLink class="nav-link text-dark" href="Wishlist">
-                                <span class="oi oi-basket" aria-hidden="true"></span> Wishlist
-                            </NavLink>
-                        </li>
-                    </Authorized>
-                </AuthorizeView>
-                <AuthorizeView>
-                    <Authorized>
-                        <li class="nav-item">
-                            <NavLink class="nav-link text-dark" href="" @onclick="Logout">
-                                <span class="oi oi-account-logout" aria-hidden="true"></span> Logout
-                            </NavLink>
-                        </li>
-                    </Authorized>
-                </AuthorizeView>
             </ul>
         </div>
     </div>
 </nav>
 
-@inject IJSRuntime jsRuntime
-@inject WebApplication.Data.Connection connection
 @code {
     bool collapseNavMenu = true;
 
@@ -66,17 +37,4 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
-    public async Task Logout()
-    {
-        var interop = new Interop(jsRuntime);
-        string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
-
-        // Here I provide fields matching the arguments of my login method, in LoginRequester.cshtml.cs
-        var fields = new { __RequestVerificationToken = antiforgerytoken, username = "logout", password = "logout" };
-
-        // Here I make a call to the loginRequester.cshtml.cs, the post method, with fields as argument.
-        // it happens through the Interop.cs class
-        await interop.SubmitForm("/logoutRequester/", fields);
-    }
-
 }

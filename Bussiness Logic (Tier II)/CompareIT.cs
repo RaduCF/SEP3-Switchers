@@ -10,9 +10,7 @@ namespace CustomAPI_V4
         public List<Item> GoogleList { get; set; }
         public GoogleClient GoogleClient = new GoogleClient();
 
-        public List<Item> ElectronicList { get; set; }
-
-        public Electronic Electronic = new Electronic();
+        // public List<Item> ElectronicList { get; set; } Claire
 
         public /*async*/ IEnumerable<Item> SearchForItems(string searchInput)
         {
@@ -20,25 +18,10 @@ namespace CustomAPI_V4
 
             return GoogleList;
         }
-
-        public IEnumerable<SomethingElectronic> SearchItemsName(string searchInput)
-        {
-            IEnumerable<SomethingElectronic> list = new List<SomethingElectronic>();
-
-            var items = Electronic.GetItemsName(searchInput);
-
-            foreach (var item in items.Result)
-            {
-                list.Append(item);
-            }
-            return list;
-
-        }
         public List<Item> SortedPriceList(string searchItem)
         {
             List<Item> everything = GoogleClient.searchApi(searchItem);
             List<Item> sortedlist = new List<Item>();
-            List<SomethingElectronic> bilka = (List<SomethingElectronic>)SearchItemsName(searchItem);
             int size = 0;
 
             foreach (var priceditem in everything)

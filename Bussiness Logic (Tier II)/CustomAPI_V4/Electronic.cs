@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -8,68 +9,29 @@ using System.Threading.Tasks;
 namespace CustomAPI_V4
 {
 
-    class Electronic
+    public class Electronic
     {
-        static HttpClient client = new HttpClient();
 
-        static async Task<SomethingElectronic> GetItemAsync(string searchItem)
+        static void getItem(SomethingElectronic item)
         {
-            string path = "https://localhost:44360/api/Items/" + searchItem;
-            SomethingElectronic item = null;
-            HttpResponseMessage response = await client.GetAsync(path);
-            if (response.IsSuccessStatusCode)
-            {
-                item = await response.Content.ReadAsAsync<SomethingElectronic>();
-            }
-            return item;
+            Console.WriteLine($"Name: {item.Title}\tPrice: " +
+                $"{item.Price}\tRating: {item.Rating}");
         }
 
-        /*static void Main()
+        public static async Task<List<SomethingElectronic>> GetItemsName(string search)
         {
-            Console.WriteLine("Select a item");
-            int i = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(i);
-            Console.WriteLine("The i selected");
+            HttpClient client = new HttpClient();
 
-            RunAsync(i).GetAwaiter().GetResult();
-        }*/
-
-        static async Task RunAsync(int i)
-        {
-            // Update port # in the following line.
-            client.BaseAddress = new Uri("http://localhost:44360/");
+            client.BaseAddress = new Uri("https://localhost:44360/api/Items?name=" + search);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-
-            try
-            {
-                
-                /*string url = "https://localhost:44360/api/Items/" + i.ToString();
-
-                // Get the product
-                SomethingElectronic item = await GetItemAsync(url);
-                getItem(item);*/
-
-                
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-            Console.ReadLine();
-        }
-
-        public List<SomethingElectronic> getElectronicList(string searchItem)
-        {
+            new MediaTypeWithQualityHeaderValue("application/json"));
             List<SomethingElectronic> items = new List<SomethingElectronic>();
-            foreach (var item in items)
-            {
-                items.Add(GetItemAsync(searchItem).Result);
-            }
-            return items;
+            var response = await client.GetAsync("https://localhost:44360/api/Items?name=" + search);
+            Console.WriteLine(await response.Content.ReadAsStringAsync());
+            var jsonToList = JsonConvert.DeserializeObject<List<SomethingElectronic>>(await response.Content.ReadAsStringAsync());
+            return jsonToList;
         }
     }
+
 }

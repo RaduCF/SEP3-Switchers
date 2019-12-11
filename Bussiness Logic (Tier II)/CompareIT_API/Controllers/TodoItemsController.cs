@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CompareIT_API.Model;
+using CustomAPI_V4;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +14,7 @@ namespace CompareIT_API.Controllers
         private CompareIT compare = new CompareIT(); // connection to the tier2
        
         
-        public TodoItemsController(TodoContext context)
+        public TodoItemsController(TodoContext context, CompareIT compare)
         {
             this.context = context;
         }
@@ -25,7 +28,6 @@ namespace CompareIT_API.Controllers
             return result;
         }
 
-        //POST getting a list by a received string
         [HttpPost]
         public IEnumerable<Item> GetItemsPost(string title)
         {

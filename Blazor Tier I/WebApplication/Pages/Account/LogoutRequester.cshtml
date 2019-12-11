@@ -1,26 +1,4 @@
 ﻿@page
 @model WebApplication.Pages.Account.LogoutRequesterModel
-@using WebApplication.Shared
-@inject Microsoft.JSInterop.IJSRuntime jsRuntime
-
-@functions{
-    private string _username;
-    private string _password;
-
-    public async Task PerformLogin()
-    {
-        Console.WriteLine("Login here");
-        // TODO get and verify username and password here against database
-
-        var interop = new Interop(jsRuntime);
-        string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
-
-        // Here I provide fields matching the arguments of my login method, in LoginRequester.cshtml.cs
-        var fields = new { __RequestVerificationToken = antiforgerytoken, username = _username, password = _password };
-
-        // Here I make a call to the loginRequester.cshtml.cs, the post method, with fields as argument.
-        // it happens through the Interop.cs class
-        await interop.SubmitForm("/logoutRequester/", fields);
-    }
+@{
 }
-

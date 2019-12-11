@@ -352,5 +352,11 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# ignore cache files
+# Ignore cache files
 *.cache
+
+.vs/
+obj/
+*.suo
+*.exe
+

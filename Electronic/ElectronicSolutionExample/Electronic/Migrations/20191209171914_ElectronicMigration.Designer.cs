@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Electronic.Migrations
 {
     [DbContext(typeof(ItemContext))]
-    [Migration("20191106150651_MigrationForElectronic")]
-    partial class MigrationForElectronic
+    [Migration("20191209171914_ElectronicMigration")]
+    partial class ElectronicMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,19 +23,25 @@ namespace Electronic.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("ImageURL")
                         .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
 
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("PriceCurrency")
+                        .HasColumnType("TEXT");
+
                     b.Property<double>("Rating")
                         .HasColumnType("REAL");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(60);
+
+                    b.Property<string>("URL")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

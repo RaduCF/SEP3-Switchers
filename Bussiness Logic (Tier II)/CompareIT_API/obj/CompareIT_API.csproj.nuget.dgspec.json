@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj": {}
+    "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj": {
+    "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
+        "projectUniqueName": "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
         "projectName": "CompareIT_API",
-        "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
-        "packagesPath": "C:\\Users\\Radu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\obj\\",
+        "projectPath": "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
+        "packagesPath": "C:\\Users\\Claire\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Radu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Claire\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
-                "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj"
+              "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
+                "projectPath": "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj"
               }
             }
           }
@@ -90,24 +90,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -116,24 +98,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
+    "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+        "projectUniqueName": "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
         "projectName": "CustomAPI_V4",
-        "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
-        "packagesPath": "C:\\Users\\Radu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
+        "projectPath": "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+        "packagesPath": "C:\\Users\\Claire\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Claire\\Documents\\GitHub\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Radu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Claire\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -190,30 +172,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

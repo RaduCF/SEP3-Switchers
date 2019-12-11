@@ -28,5 +28,9 @@ namespace WebApplication.Pages.Account
                 CookieAuthenticationDefaults.AuthenticationScheme, principal);
             return LocalRedirect(Url.Content("~/"));
         }
+
+            public void OnGet()
+        {
+        }
     }
 }
