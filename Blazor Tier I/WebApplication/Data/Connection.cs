@@ -49,12 +49,11 @@ namespace WebApplication.Data
             using var client = new HttpClient();
 
             var response = await client.PostAsync(url, data);
-            Console.WriteLine("Status code is: " + response.IsSuccessStatusCode);
-            //string result = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine("Status code is: " + response);
             
             if (!response.IsSuccessStatusCode)
             {
-                return "Username already used.";
+                return "User name is already in the system.";
             }
             else
             {
@@ -73,12 +72,11 @@ namespace WebApplication.Data
 
             var response = await client.PostAsync(url, data);
 
-            Console.WriteLine("Status code is: " + response.IsSuccessStatusCode);
-            //string result = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine("Status code is: " + response);
 
             if (!response.IsSuccessStatusCode)
             {
-                return "Username or password is incorrect.";
+                return "User name or password is incorrect.";
             }
             else
             {
