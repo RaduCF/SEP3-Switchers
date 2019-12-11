@@ -49,9 +49,10 @@ namespace WebApplication.Data
             using var client = new HttpClient();
 
             var response = await client.PostAsync(url, data);
-
-            string result = response.Content.ReadAsStringAsync().Result;
-            if (result.Equals("Username already used."))
+            Console.WriteLine("Status code is: " + response.IsSuccessStatusCode);
+            //string result = response.Content.ReadAsStringAsync().Result;
+            
+            if (!response.IsSuccessStatusCode)
             {
                 return "Username already used.";
             }
@@ -72,18 +73,16 @@ namespace WebApplication.Data
 
             var response = await client.PostAsync(url, data);
 
-            string result = response.Content.ReadAsStringAsync().Result;
-            if (result.Equals("wrong username"))
+            Console.WriteLine("Status code is: " + response.IsSuccessStatusCode);
+            //string result = response.Content.ReadAsStringAsync().Result;
+
+            if (!response.IsSuccessStatusCode)
             {
-                return "invalid username";
+                return "Username or password is incorrect.";
             }
-            else if (result.Equals("wrong password"))
+            else
             {
-                return "invalid password";
-            }
-            else 
-            { 
-                return "accepted"; 
+                return "accepted";
             }
         }
     }
