@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -6,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Request
 {
-    public class Item
+    /*public class Item
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public double Rating { get; set; }
-    }
+    }*/
 
     class Program
     {
@@ -21,7 +23,7 @@ namespace Request
 
         static void getItem(Item item)
             {
-                Console.WriteLine($"Name: {item.Name}\tPrice: " +
+                Console.WriteLine($"Name: {item.Title}\tPrice: " +
                     $"{item.Price}\tRating: {item.Rating}");
             }
 
@@ -66,66 +68,40 @@ namespace Request
                 return response.StatusCode;
             }
 
-            static void Main()
+            static async Task<List<Item>> GetItemsName(string search)
+            {
+                client.BaseAddress = new Uri("https://localhost:44360/api/Items?name=" + search);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+                List<Item> items = new List<Item>();
+                var response = await client.GetAsync("https://localhost:44360/api/Items?name=" + search);
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+                var jsonToList = JsonConvert.DeserializeObject<List<Item>>(await response.Content.ReadAsStringAsync());
+                return jsonToList;
+            }
+
+            static void Main(string[] args)
             {
                 Console.WriteLine("Select a item");
-                int i = Convert.ToInt32(Console.ReadLine());
+
+                //int i = Convert.ToInt32(Console.ReadLine());
+
+                string i = Console.ReadLine();
                 Console.WriteLine(i);
                 Console.WriteLine("The i selected");
 
-                RunAsync(i).GetAwaiter().GetResult();
-            }
-
-            static async Task RunAsync(int i)
+                List<Item> items = new List<Item>();
+                items = GetItemsName(i).Result;
+            foreach (var item in items)
             {
-                // Update port # in the following line.
-                client.BaseAddress = new Uri("http://localhost:44360/");
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(
-                    new MediaTypeWithQualityHeaderValue("application/json"));
-
-                try
-                {
-                    // Create a new product
-                    /*Item item = new Item
-                    {
-                        Id = 7,
-                        Name = "",
-                        Description = "",
-                        Price = 1400,
-                        Rating = 3.9
-                    };
-
-                    var url = await CreateItemAsync(item);
-                    Console.WriteLine($"Created at {url}");*/
-                    string url = "https://localhost:44360/api/Items/" + i.ToString();
-
-                    // Get the product
-                    Item item = await GetItemAsync(url);
-                    getItem(item);
-
-                    //url.PathAndQuery
-
-                    // Update the product
-                    //Console.WriteLine("Updating price...");
-                    //item.Price = 80;
-                    //await UpdateItemAsync(item);
-
-                    // Get the updated product
-                    //item = await GetItemAsync(url.PathAndQuery);
-                    //getItem(item);
-
-                    // Delete the product
-                    //var statusCode = await DeleteItemAsync(item.Id);
-                    //Console.WriteLine($"Deleted (HTTP Status = {(int)statusCode})");
-
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-
-                Console.ReadLine();
+                Console.WriteLine(item.Id);
             }
+
+                //RunAsync(i).GetAwaiter().GetResult();
+                Console.WriteLine("Here we are");
+        }
+
+        
     }
 }

@@ -355,3 +355,8 @@ MigrationBackup/
 # Ignore cache files
 *.cache
 
+.vs/
+obj/
+*.suo
+*.exe
+

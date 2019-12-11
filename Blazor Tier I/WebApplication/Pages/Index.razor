@@ -1,0 +1,91 @@
+﻿@page "/"
+@using WebApplication.Data
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+@inject WebApplication.Data.Connection connection
+<style>
+    #titlediv {
+        margin-top: 20%;
+    }
+
+    #searchdiv {
+        width: 50%;
+        height: 20%;
+        margin: auto;
+        margin-top: 5%;
+    }
+
+    #searchbar {
+        width: 80%;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 11px;
+    }
+
+    #submit {
+        float: right;
+        width: 19.5%;
+        border: 1px solid #ccc;
+        border-radius: 11px;
+        padding: 12px 10px;
+        display: inline-block;
+        margin-left: 0.5%;
+    }
+</style>
+<AuthorizeView>
+    <Authorized>
+        <p>Logged in</p>
+    </Authorized>
+    <NotAuthorized>
+        <p>Not logged in</p>
+        <LoginDisplay />
+    </NotAuthorized>
+</AuthorizeView>
+
+<div id="titlediv" class="text-center">
+    <h1 class="display-2">CompareIT</h1>
+    <p>Find the best prices for the products you need.</p>
+</div>
+
+<div id="searchdiv">
+    <EditForm Model="@exampleModel" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <InputText id="searchbar" @bind-Value="exampleModel.Search" />
+
+        <button type="submit" id="submit" @onclick="HandleValidSubmit">Search</button>
+    </EditForm>
+</div>
+
+
+<button type="submit" id="register" @onclick="Register">Register</button>
+<p>@user @shting</p>
+
+@code{
+    private ExampleModel exampleModel = new ExampleModel();
+    public string user { get; set; } = "";
+    string shting = "";
+
+    public void HandleValidSubmit()
+    {
+        if (!string.IsNullOrEmpty(exampleModel.Search))
+        {
+            try
+            {
+                connection.GetItems(exampleModel.Search);
+                NavigationManager.NavigateTo("/Products");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+        }
+
+    }
+    public void Register()
+    {
+        shting = "Works";
+        connection.sendRegisterRequest();
+    }
+}

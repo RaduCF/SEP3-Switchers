@@ -26,22 +26,24 @@ C:\Users\msama\OneDrive\Documents\3-semester\SEP3\LESSON_1\SEP3-Switchers\Custom
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\LESSON_1\SEP3-Switchers\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csproj.CopyComplete
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\LESSON_1\SEP3-Switchers\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.dll
 C:\Users\msama\OneDrive\Documents\3-semester\SEP3\LESSON_1\SEP3-Switchers\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.pdb
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.exe
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.deps.json
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.runtimeconfig.json
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.runtimeconfig.dev.json
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.dll
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.pdb
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\RestSharp.dll
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csprojAssemblyReference.cache
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfoInputs.cache
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfo.cs
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csproj.CopyComplete
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.dll
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.pdb
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\System.Net.Http.Formatting.dll
-C:\Users\Claire\Documents\GitHub\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csprojAssemblyReference.cache
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfoInputs.cache
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfo.cs
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.dll
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.pdb
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfoInputs.cache
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfo.cs
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.pdb
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.exe
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.deps.json
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.runtimeconfig.json
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.runtimeconfig.dev.json
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.pdb
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\RestSharp.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csproj.CopyComplete
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.exe
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.deps.json
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\CustomAPI_V4.runtimeconfig.json
@@ -52,9 +54,8 @@ C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\RestSharp.dll
-C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csprojAssemblyReference.cache
-C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfoInputs.cache
-C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.AssemblyInfo.cs
 C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.csproj.CopyComplete
-C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.dll
-C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\obj\Debug\netcoreapp3.0\CustomAPI_V4.pdb
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\System.Net.Http.Formatting.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
+C:\Users\msama\OneDrive\Documents\3-semester\SEP3\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Semver.dll
+C:\Users\Radu\Desktop\SEP3-Switchers\Bussiness Logic (Tier II)\CustomAPI_V4\bin\Debug\netcoreapp3.0\Semver.dll
