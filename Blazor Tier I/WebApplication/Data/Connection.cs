@@ -39,9 +39,9 @@ namespace WebApplication.Data
                 }
             }
         }
-        public async Task sendRegisterRequest(string firstName,string lastName, string username, string password, string email)
+        public async Task<string> sendRegisterRequest(string firstName,string lastName, string username, string password, string email)
         {
-            User newuser = new User("Ati","yells", "at", "everyone", "always", false);
+            User newuser = new User(firstName, lastName, username, password, email, false);
             var json = JsonConvert.SerializeObject(newuser);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -49,37 +49,41 @@ namespace WebApplication.Data
             using var client = new HttpClient();
 
             var response = await client.PostAsync(url, data);
-
-            string result = response.Content.ReadAsStringAsync().Result;
-            if (result.Equals("Username already used."))
+            Console.WriteLine("Status code is: " + response.StatusCode);
+            //string result = response.Content.ReadAsStringAsync().Result;
+            
+            /*if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Username already used.");
+                return "User name is already in the system.";
             }
+            else
+            {
+                return "accepted";
+            }*/
+            return response.RequestMessage.ToString();
         }
-        public async Task sendLoginRequest(string username, string password)
+        public async Task<string> sendLoginRequest(string username, string password)
         {
-            List<string> info = new List<string>();
-            info.Add(username);
-            info.Add(password);
+            Login info = new Login{ ID=username, Password=password };
             var json = JsonConvert.SerializeObject(info);
 
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-            //var url = "https://localhost:44345/api/Users";
-            //using var client = new HttpClient();
+            var url = "https://localhost:44345/api/Users/Radu";
+            using var client = new HttpClient();
 
-            //var response = await client.PostAsync(url, data);
+            var response = await client.PostAsync(url, data);
 
-            string result = "";//response.Content.ReadAsStringAsync().Result;
-            if (result.Equals("wrong username"))
+            Console.WriteLine("Status code is: " + response);
+
+            if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("invalid username");
+                return "User name or password is incorrect.";
             }
-            else if (result.Equals("wrong password"))
+            else
             {
-                throw new Exception("invalid password");
+                return "accepted";
             }
-            else { return; }
         }
     }
 }

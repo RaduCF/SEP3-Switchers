@@ -351,6 +351,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-
-# ignore cache files
-*.cache
+UserAPI - Radu/UserAPI/UserAPI.csproj
+UserAPI _V6/UserAPI/Client_CSharp.cs

@@ -1,63 +1,70 @@
 ﻿@page "/login"
 
-@using System.ComponentModel.DataAnnotations;
+@using System.ComponentModel.DataAnnotations
 @inject IJSRuntime jsRuntime
 @inject WebApplication.Data.Connection connection
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
 
-<div class="text-center" style="margin-top:13%;">
-    <h1>Login here:</h1>
-    <br />
-    <div class="form-group">
-        <label style="font-size:24px;">User name:</label>
-        <input type="text" placeholder="User name" @bind-value="_username" required />
-    </div>
-    <div class="form-group" style="margin-left:1%;">
-        <label style="font-size:24px;">Password: </label>
-        <input type="password" placeholder="Password" @bind-value="_password" required />
-    </div>
-    <p>@errormessage</p>
-    <button style="font-size:20px;" class="btn btn-primary" @onclick="PerformLogin">Login</button>
-    <button style="font-size:20px;" class="btn btn-primary" @onclick="Cancel">Cancel</button>
-    <p style="font-size:20px; margin-top:3%;">If you don't have an account already, you can <a href="/Register">register here.</a></p>
-</div>
+    <AuthorizeView>
+        <NotAuthorized>
+            <div class="text-center" style="margin-top:13%;">
+                <h1>Login here:</h1>
+                <br />
+                <div class="form-group">
+                    <label style="font-size:24px;">User name:</label>
+                    <input type="text" placeholder="User name" @bind-value="_username" required />
+                </div>
+                <div class="form-group" style="margin-left:1%;">
+                    <label style="font-size:24px;">Password: </label>
+                    <input type="password" placeholder="Password" @bind-value="_password" required />
+                </div>
+                <p>@errormessage</p>
+                <button style="font-size:20px;" class="btn btn-primary" @onclick="PerformLogin">Login</button>
+                <button style="font-size:20px;" class="btn btn-primary" @onclick="Cancel">Cancel</button>
+                <p style="font-size:20px; margin-top:3%;">If you don't have an account already, you can <a href="/Register">register here.</a></p>
+            </div>
+            </NotAuthorized>
+        </AuthorizeView>
 
-@code {
-    private string _username;
-    private string _password;
-    private string errormessage;
+            @code {
+                private string _username;
+                private string _password;
+                private string errormessage;
 
-    public async Task PerformLogin()
-    {
+                public async Task PerformLogin()
+                {
 
-        // TODO get and verify username and password here against database
-        try
-        {
-            //connection.sendLoginRequest(_username, _password);
-            var interop = new Interop(jsRuntime);
-            string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
+                    // TODO get and verify username and password here against database
+                    try
+                    {
+                        string connecting = connection.sendLoginRequest(_username, _password).Result ;
+                        if (connecting.Equals("accepted")) {
+                            var interop = new Interop(jsRuntime);
+                            string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
 
-            // Here I provide fields matching the arguments of my login method, in LoginRequester.cshtml.cs
-            var fields = new { __RequestVerificationToken = antiforgerytoken, username = _username, password = _password };
+                            // Here I provide fields matching the arguments of my login method, in LoginRequester.cshtml.cs
+                            var fields = new { __RequestVerificationToken = antiforgerytoken, username = _username, password = _password };
 
-            // Here I make a call to the loginRequester.cshtml.cs, the post method, with fields as argument.
-            // it happens through the Interop.cs class
-            await interop.SubmitForm("/loginRequester/", fields);
-        }
-        catch (Exception e)
-        {
-            if (e.Message.Equals("invalid username"))
-            {
-                errormessage = "Invalid Username.";
+                            // Here I make a call to the loginRequester.cshtml.cs, the post method, with fields as argument.
+                            // it happens through the Interop.cs class
+                            await interop.SubmitForm("/loginRequester/", fields);
+                        }
+                        else
+                        {
+                            errormessage = connecting;
+                        }
+
+
+
+
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+                public void Cancel()
+                {
+                    NavigationManager.NavigateTo("/");
+                }
             }
-            else if (e.Message.Equals("invalid password"))
-            {
-                errormessage = "Invalid Password.";
-            }
-        }
-    }
-    public void Cancel()
-    {
-        NavigationManager.NavigateTo("/");
-    }
-}
