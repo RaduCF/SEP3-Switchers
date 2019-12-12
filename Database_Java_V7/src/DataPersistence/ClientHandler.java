@@ -18,8 +18,11 @@ public class ClientHandler implements Runnable {
     private Gson gson = new Gson();
 
     public ClientHandler(Socket socket) throws IOException {
-        in = socket.getInputStream();
+       in = socket.getInputStream();
         out = socket.getOutputStream();
+
+
+
 
 
     }
@@ -78,10 +81,13 @@ public class ClientHandler implements Runnable {
     }
 
 
-    public void register(User user) throws SQLException, IOException {
-        if (database.userExists(user.getID())){
+    public void register(User user) throws  IOException {
+       try{ if (database.userExists(user.getID())){
                 database.registerUser(user);
-                send("Success");}
+                send("Success");}}
+       catch( SQLException e){
+           System.out.println("ID is taken!");
+       }
 
     }
 
