@@ -17,8 +17,11 @@ namespace WebApplication.Pages.Account
         {
             Console.WriteLine("Posting logout..");
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
+            
             return LocalRedirect(Url.Content("~/"));
+        }
+        public void OnGet()
+        {
         }
     }
 }

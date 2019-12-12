@@ -68,14 +68,15 @@
     }
     public async Task Logout()
     {
-        Console.WriteLine("Logout here");
         var interop = new Interop(jsRuntime);
         string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
-        
-        // Here I provide fields matching the arguments of my logout method, i.e. none. Could have a returnURL
-        // see the example downloadable from here:
-        // https://www.oqtane.org/Resources/Blog/PostId/527/exploring-authentication-in-blazor?fbclid=IwAR0rbQkY47cHHxs29HWCk0RggH7GHeLDx3kJ4vwmgUGMTsFU3hxpsQ9ybZo
-        var fields = new {__RequestVerificationToken = antiforgerytoken};
+
+        // Here I provide fields matching the arguments of my login method, in LoginRequester.cshtml.cs
+        var fields = new { __RequestVerificationToken = antiforgerytoken, username = "logout", password = "logout" };
+
+        // Here I make a call to the loginRequester.cshtml.cs, the post method, with fields as argument.
+        // it happens through the Interop.cs class
         await interop.SubmitForm("/logoutRequester/", fields);
     }
+
 }

@@ -39,7 +39,7 @@ namespace WebApplication.Data
                 }
             }
         }
-        public async Task<string> sendRegisterRequest(string firstName,string lastName, string username, string password, string email)
+        public async Task<string> sendRegisterRequest(string firstName, string lastName, string username, string password, string email)
         {
             User newuser = new User(firstName, lastName, username, password, email, false);
             var json = JsonConvert.SerializeObject(newuser);
@@ -50,7 +50,7 @@ namespace WebApplication.Data
 
             var response = await client.PostAsync(url, data);
             Console.WriteLine("Status code is: " + response);
-            
+
             if (!response.IsSuccessStatusCode)
             {
                 return "User name is already in the system.";
@@ -62,7 +62,7 @@ namespace WebApplication.Data
         }
         public async Task<string> sendLoginRequest(string username, string password)
         {
-            Login info = new Login{ ID=username, Password=password };
+            Login info = new Login { ID = username, Password = password };
             var json = JsonConvert.SerializeObject(info);
 
             var data = new StringContent(json, Encoding.UTF8, "application/json");
