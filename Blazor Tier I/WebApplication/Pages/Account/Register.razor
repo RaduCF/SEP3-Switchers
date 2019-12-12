@@ -49,10 +49,10 @@
 
                 public async Task PerformRegister()
                 {
-                //try
-                // {
-                    connection.sendRegisterRequest(firstName, lastName, _username, _password, email);
-                /*var interop = new Interop(jsRuntime);
+                    try
+                    {
+                        connection.sendRegisterRequest(firstName, lastName, _username, _password, email);
+                        /*var interop = new Interop(jsRuntime);
                         string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
 
                         // Here I provide fields matching the arguments of my login method, in LoginRequester.cshtml.cs
@@ -61,17 +61,16 @@
                         // Here I make a call to the loginRequester.cshtml.cs, the post method, with fields as argument.
                         // it happens through the Interop.cs class
                         await interop.SubmitForm("/loginRequester/", fields);*/
-                // }
-                /*catch (Exception e)
+                    }
+                    catch (Exception e)
                     {
                         if (e.Message.Equals("Username already used."))
                         {
                             errormessage = e.Message;
                         }
-                    }*/
-                
+                    }
 
-            }
+                }
                 public void Cancel()
                 {
                     NavigationManager.NavigateTo("/");
