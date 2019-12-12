@@ -1,3 +1,0 @@
-INSERT INTO public."Wish"(
-	url, username)
-	VALUES ('https://www.elgiganten.dk/product/mobil-gps/mobiltelefoner/23435/huawei-y6-2019-smartphone-midnight-black?gclid=CjwKCAiAws7uBRAkEiwAMlbZjkrg1ugaH4tOhNmHzKw97ZlTfzNsTufW-n_PH04nyhw_kjBneCwJlxoC5rMQAvD_BwE&gclsrc=aw.ds',654321);
