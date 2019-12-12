@@ -62,7 +62,7 @@ namespace WebApplication.Data
         }
         public async Task<string> sendLoginRequest(string username, string password)
         {
-            Login info = new Login { ID = username, Password = password };
+            LoginInfo info = new LoginInfo { ID = username, Password = password };
             var json = JsonConvert.SerializeObject(info);
 
             var data = new StringContent(json, Encoding.UTF8, "application/json");

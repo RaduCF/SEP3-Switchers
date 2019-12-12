@@ -3,43 +3,48 @@
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
 @inject WebApplication.Data.Connection connection
 @inject IJSRuntime jsRuntime
+@using WebApplication.Data
+    <div class="text-center">
+        <h1 style="margin-top:13%;">Register:</h1>
+        <br />
+        <EditForm Model="@registerModel" OnValidSubmit="@PerformRegister">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
 
-<div class="text-center">
-    <h1 style="margin-top:13%;">Register:</h1>
-    <br />
-    <div class="form-group">
-        <label style="font-size:24px;">First Name:</label>
-        <input type="text" placeholder="Name" @bind-value="firstName" required />
-    </div>
-    <div class="form-group">
-        <label style="font-size:24px;">Last Name:</label>
-        <input type="text" placeholder="Name" @bind-value="lastName" required />
-    </div>
-    <div class="form-group" style="margin-left:-1%;">
-        <label style="font-size:24px;">User name:</label>
-        <input type="text" placeholder="User name" @bind-value="_username" required />
-    </div>
-    <div class="form-group" style="margin-left:-0.29%;">
-        <label style="font-size:24px;">Password: </label>
-        <input type="password" placeholder="Password" @bind-value="_password" required />
-    </div>
-    <div class="form-group" style="margin-left:3.4%;">
-        <label style="font-size:24px;">Email:</label>
-        <input type="text" placeholder="example@gmail.com" @bind-value="email" required />
-    </div>
+            <div class="form-group">
+                <label style="font-size:24px;">First Name:</label>
+                <InputText id="firstname" placeholder="First name" @bind-Value="registerModel.FirstName" required />
+            </div>
 
-    <p style="font-size:20px; color:red; font-weight:500;">@errormessage</p>
+            <div class="form-group">
+                <label style="font-size:24px;">Last Name:</label>
+                <InputText id="lastname" placeholder="Last name" @bind-Value="registerModel.LastName" required />
+            </div>
 
-    <button style="font-size:20px;" class="btn btn-primary" @onclick="PerformRegister">Register</button>
-    <button style="font-size:20px;" class="btn btn-primary" @onclick="Cancel">Cancel</button>
-</div>
+            <div class="form-group" style="margin-left:-1%;">
+                <label style="font-size:24px;">User name:</label>
+                <InputText id="username" placeholder="User name" @bind-Value="registerModel.ID" required />
+            </div>
+
+            <div class="form-group" style="margin-left:-0.29%;">
+                <label style="font-size:24px;">Password: </label>
+                <InputText type="password" id="pass" placeholder="Password" @bind-Value="registerModel.Password" required />
+            </div>
+
+            <div class="form-group" style="margin-left:3.4%;">
+                <label style="font-size:24px;">Email:</label>
+                <InputText id="pass" placeholder="example@gmail.com" @bind-Value="registerModel.Email" required />
+            </div>
+
+            <p style="font-size:20px; color:red; font-weight:500;">@errormessage</p>
+
+            <button style="font-size:20px;" class="btn btn-primary">Register</button>
+            <button style="font-size:20px;" class="btn btn-primary" @onclick="Cancel">Cancel</button>
+        </EditForm>
+    </div>
 
 @code {
-    private string firstName;
-    private string lastName;
-    private string _username;
-    private string _password;
-    private string email;
+    private RegisterModel registerModel = new RegisterModel();
 
     private string errormessage = "";
 
@@ -52,7 +57,7 @@
             string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
 
             // Here I provide fields matching the arguments of my login method, in LoginRequester.cshtml.cs
-            var fields = new { __RequestVerificationToken = antiforgerytoken, username = _username, password = _password };
+            var fields = new { __RequestVerificationToken = antiforgerytoken, username = registerModel.ID, password = registerModel.Password };
 
             // Here I make a call to the loginRequester.cshtml.cs, the post method, with fields as argument.
             // it happens through the Interop.cs class
