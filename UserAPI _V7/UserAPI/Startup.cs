@@ -26,7 +26,7 @@ namespace UserAPI
                 opt.UseInMemoryDatabase("User_InMemory_Data")); // install Microsoft.EntityFrameworkCore.InMemory
 
             services.AddControllers();
-          //  services.AddTransient<ModelManager>();
+            services.AddTransient<UserLogic>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

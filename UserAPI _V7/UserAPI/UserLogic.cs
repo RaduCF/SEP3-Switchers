@@ -6,28 +6,24 @@ namespace UserAPI
 {
     public class UserLogic
     {
-        private Client_CSharp client;
+        private Client_CSharp client { get; set; }
         private bool loggedIn;
         public UserLogic()
         {
             this.client = new Client_CSharp();
             this.loggedIn = false;
         }
-
         public void RegisterUser(User user)
         {
             client.SendUser(user);
-         
         }
-
         //----------------------------Login------------------------------------//
 
         /* public bool isLoggedIn()
          {
              return loggedIn;
          }*/
-
-        public void Login(Login login)
+        public bool Login(Login login)
         {
         client.SendLogin(login); // sending to be checked in tier 3
             if (client.ReciveVerification().Equals(true) )//if login message is true
@@ -36,8 +32,9 @@ namespace UserAPI
             }
             else
             {
-                throw new System.ArgumentException("Password is not correct");
+                loggedIn = false;
             }
+            return loggedIn;
         }
-
-    }}
+    }
+}

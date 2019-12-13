@@ -78,10 +78,7 @@ namespace WebApplication.Data
             {
                 return "User name or password is incorrect.";
             }
-            else
-            {
                 return "accepted";
-            }
         }
     }
 }

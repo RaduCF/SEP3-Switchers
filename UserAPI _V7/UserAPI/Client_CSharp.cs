@@ -13,7 +13,7 @@ namespace UserAPI
         private byte[] toSendBytes;
         private byte[] toSendLenBytes;
         private int toSendLen;
-        private IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse("172.20.10.8"), 6789);
+        private IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse("10.152.208.81"), 6789);
         
         public Client_CSharp()
         {

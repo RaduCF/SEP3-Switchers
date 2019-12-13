@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using System.Web.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UserAPI.Model;
 
 namespace UserAPI.Controllers
 {
-    [Route("api/Users")]
+    [Microsoft.AspNetCore.Mvc.Route("api/Users")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -24,7 +25,7 @@ namespace UserAPI.Controllers
 
         //registering new user both into in-memory and database
         // POST: api/Users
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public async Task/*<ActionResult<User>>*/ PostUser(User user)
         {
             _context.Users.Add(user);
@@ -36,22 +37,34 @@ namespace UserAPI.Controllers
             {
                 if (UserExists(user.ID))
                 {
+                    throw new HttpResponseException(HttpStatusCode.BadRequest);
                     //return Conflict();
+                    //throw new NotImplementedException("The username  is already in the system");
                 }
                 else
                 {
-                    throw;
+                    throw new HttpResponseException(HttpStatusCode.Accepted);
                 }
             }
             manager.RegisterUser(user);
+            bool blah = false;
+             if (blah)
+             {
+                 throw new HttpResponseException(HttpStatusCode.AlreadyReported);
+                 // throw new NotImplementedException("The username  is already in the system");
+             }
+             else
+             {
+                 throw new HttpResponseException(HttpStatusCode.Accepted);
+             }
             //return CreatedAtAction("GetUser", new { id = user.ID }, user);
         }
 
 
         //login to database
         // POST: api/Users/login
-        [HttpPost("{id}")]
-        public async Task<ActionResult<Login>>PostLogin(Login login)
+        [Microsoft.AspNetCore.Mvc.HttpPost("{id}")]
+        public async Task<ActionResult<Login>> PostLogin(Login login)
         {
             Console.WriteLine("test");
             _context.Login.Add(login);
@@ -63,17 +76,27 @@ namespace UserAPI.Controllers
             {
                 if (UserExists(login.ID))
                 {
-                   return Conflict();
+                    throw new HttpResponseException(HttpStatusCode.BadRequest);
                 }
                 else
                 {
-                    throw;
+                    throw new HttpResponseException(HttpStatusCode.Accepted);
                 }
             }
 
-            manager.Login(login);
+            
+            bool loggedin = manager.Login(login);
 
-          return CreatedAtAction("GetUser", new { id = login }, login);
+            if (loggedin)
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                // throw new NotImplementedException("Either username or password is incorrect");
+            }
+                throw new HttpResponseException(HttpStatusCode.Accepted);
+
+/*
+            return CreatedAtAction("GetUser", new { id = login }, login);
+*/
 
         }
 
@@ -81,14 +104,14 @@ namespace UserAPI.Controllers
         //--------------------------------------------------------------------------------------------------// 
 
         // GET: api/Users
-        [HttpGet]
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
         // GET: api/Users/5
-        [HttpGet("{id}")]
+        [Microsoft.AspNetCore.Mvc.HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(string id)
         {
             var user = await _context.Users.FindAsync(id);
@@ -104,7 +127,7 @@ namespace UserAPI.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPut("{id}")]
+        [Microsoft.AspNetCore.Mvc.HttpPut("{id}")]
         public async Task<IActionResult> PutUser(string id, User user)
         {
             if (id != user.ID)
@@ -136,7 +159,7 @@ namespace UserAPI.Controllers
 
 
         // DELETE: api/Users/5
-        [HttpDelete("{id}")]
+        [Microsoft.AspNetCore.Mvc.HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(string id)
         {
             var user = await _context.Users.FindAsync(id);
@@ -157,4 +180,3 @@ namespace UserAPI.Controllers
         }
     }
 }
-

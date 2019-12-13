@@ -47,7 +47,7 @@
     {
         try
         {
-            //connection.sendRegisterRequest(firstName, lastName, _username, _password, email);
+            connection.sendRegisterRequest(firstName, lastName, _username, _password, email);
             var interop = new Interop(jsRuntime);
             string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
 
