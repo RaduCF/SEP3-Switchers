@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj": {}
+    "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj": {
+    "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
+        "projectUniqueName": "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
         "projectName": "CompareIT_API",
-        "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
+        "projectPath": "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CompareIT_API\\CompareIT_API.csproj",
         "packagesPath": "C:\\Users\\Radu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CompareIT_API\\obj\\",
+        "outputPath": "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CompareIT_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
-                "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj"
+              "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
+                "projectPath": "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj"
               }
             }
           }
@@ -120,14 +120,14 @@
         }
       }
     },
-    "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
+    "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+        "projectUniqueName": "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
         "projectName": "CustomAPI_V4",
-        "projectPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
+        "projectPath": "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CustomAPI_V4\\CustomAPI_V4.csproj",
         "packagesPath": "C:\\Users\\Radu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Radu\\Desktop\\SEP3-Switchers\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
+        "outputPath": "F:\\5. SEP 3\\Bussiness Logic (Tier II)\\CustomAPI_V4\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

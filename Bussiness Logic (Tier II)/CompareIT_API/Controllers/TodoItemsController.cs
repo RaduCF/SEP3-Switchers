@@ -1,10 +1,14 @@
-﻿using System;
+﻿using CompareIT_API.Model;
+using CustomAPI_V4;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace CompareIT_API.Controllers
 {
+    [Route("api/TodoItems")]
     public class TodoItemsController
     {
         private readonly TodoContext context;
@@ -19,15 +23,14 @@ namespace CompareIT_API.Controllers
 
         //GET by query string
         [HttpGet]
-        public IEnumerable<Item> GetItems(string title)
+        public IEnumerable<FinalItem> GetItems(string title)
         {
             var result= compare.SortedPriceList(title);
             return result;
         }
 
-        //POST getting a list by a received string
         [HttpPost]
-        public IEnumerable<Item> GetItemsPost(string title)
+        public IEnumerable<FinalItem> GetItemsPost(string title)
         {
             var result = compare.SortedPriceList(title);
             return result;

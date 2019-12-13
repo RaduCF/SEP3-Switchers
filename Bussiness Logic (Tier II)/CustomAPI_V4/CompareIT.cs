@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CustomAPI_V4
 {
@@ -9,44 +10,52 @@ namespace CustomAPI_V4
     {
         public List<Item> GoogleList { get; set; }
         public GoogleClient GoogleClient = new GoogleClient();
+        public List<Item> ElectronicList { get; set; }
+        public Electronic Electronic = new Electronic();
 
-        // public List<Item> ElectronicList { get; set; } Claire
-
-        public /*async*/ IEnumerable<Item> SearchForItems(string searchInput)
+        public async Task<IEnumerable<Item>> SearchForItems(string searchInput)
         {
-            GoogleList = GoogleClient.searchApi(searchInput);
+            GoogleList = await GoogleClient.searchApi(searchInput);
 
             return GoogleList;
         }
-        public List<Item> SortedPriceList(string searchItem)
-        {
-            List<Item> everything = GoogleClient.searchApi(searchItem);
-            List<Item> sortedlist = new List<Item>();
-            int size = 0;
 
-            foreach (var priceditem in everything)
+        public async Task<IEnumerable<FinalItem>> SearchItemsName(string searchInput)
+        {
+            var items = await Electronic.GetItemsName(searchInput);
+            return items;
+
+        }
+        public List<FinalItem> SortedPriceList(string searchItem)
+        {
+            List<Item> elgigantenlist = GoogleClient.searchApi(searchItem).Result;
+            List<FinalItem> everything = new List<FinalItem>();
+
+            foreach (var eitem in elgigantenlist)
             {
-                if (priceditem.Pagemap.Offer != null)
-                {
-                    size++;
-                }
+                FinalItem newitem = new FinalItem { Title=eitem.Title, URL=eitem.Link.ToString(), ImageURL=null, Price=eitem.Pagemap.Offer[0].Price, PriceCurrency=eitem.Pagemap.Offer[0].Pricecurrency, Rating=eitem.Pagemap.Aggregaterating[0].Ratingvalue };
+                everything.Add(newitem);
+            }
+            List<FinalItem> bilka = (List<FinalItem>)SearchItemsName(searchItem).Result;
+
+            foreach (var bitem in bilka)
+            {
+                FinalItem newitem = new FinalItem { Title = bitem.Title, URL = bitem.URL, ImageURL = bitem.ImageURL, Price = bitem.Price, PriceCurrency = bitem.PriceCurrency, Rating = bitem.Rating };
+                everything.Add(newitem);
             }
 
-            Item[] itemswithprice = new Item[size];
-
+            int size = everything.Count;
+            FinalItem[] itemswithprice = new FinalItem[size];
+            List<Item> sortedlist = new List<Item>();
             try
             {
                 var index = 0;
-                foreach (var priceditem in everything)
+                foreach (var allitem in everything)
                 {
-                    if (priceditem.Pagemap.Offer != null)
+                    if (allitem != null)
                     {
-                        //if (priceditem.Pagemap.Product[0].Photo != null)
-                        //{
-                            itemswithprice[index] = priceditem;
-                            index++;
-                        //}
-                        
+                        itemswithprice[index] = allitem;
+                        index++;
                     }
                 }
                 //start of sorting
@@ -57,7 +66,7 @@ namespace CustomAPI_V4
                 {
                     for (i = 0; i < j; i++)
                     {
-                        if (itemswithprice.ElementAt(i).Pagemap.Offer[0].Price > itemswithprice.ElementAt(i + 1).Pagemap.Offer[0].Price)
+                        if (itemswithprice.ElementAt(i).Price > itemswithprice.ElementAt(i + 1).Price)
                         {
                             var temp = itemswithprice[i];
                             itemswithprice[i] = itemswithprice[i + 1];
@@ -70,15 +79,12 @@ namespace CustomAPI_V4
             {
                 Console.WriteLine(e.StackTrace);
             }
+
             foreach (var item in itemswithprice)
             {
-                Console.WriteLine(item.Title + " and the price: " + item.Pagemap.Offer[0].Price);
+                Console.WriteLine(item.Title + " and the price: " + item.Price);
             }
-            foreach (var item in itemswithprice)
-            {
-                sortedlist.Add(item);
-            }
-            return sortedlist;
+            return itemswithprice.ToList<FinalItem>();
         }
     }
 }

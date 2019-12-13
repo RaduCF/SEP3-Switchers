@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -8,7 +9,7 @@ namespace CustomAPI_V4
 {
     public class GoogleClient
     {
-        public List<Item> searchApi(string searchitem)
+        public async Task<List<Item>> searchApi(string searchitem)
         {
             RestClient client = new RestClient(
                     "https://www.googleapis.com/customsearch/v1?key=AIzaSyC19-EocSwfWeacp7hHZ1L7SQT5ElR4cEg&cx=012558914576125397551:aqn3sajeroi&q=" + searchitem);
