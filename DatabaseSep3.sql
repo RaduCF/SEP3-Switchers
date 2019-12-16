@@ -1,27 +1,37 @@
 drop schema Public cascade ;
 create schema  Public;
 set schema 'public';
+
 CREATE TABLE if not exists Public.Users
 (
-
-username character varying(15) COLLATE pg_catalog."default" NOT NULL,
-    password character varying(9) COLLATE pg_catalog."default" NOT NULL,
+username character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(20) COLLATE pg_catalog."default" NOT NULL,
     firstname character varying COLLATE pg_catalog."default",
     lastname character varying COLLATE pg_catalog."default",
     email character varying(40) COLLATE pg_catalog."default" NOT NULL,
     isAdmin boolean NOT NULL,
     CONSTRAINT Users_pkey PRIMARY KEY (username)
 );
-CREATE TABLE if not exists Public.Wish
-(
-    URL character varying COLLATE pg_catalog.default NOT NULL,
-    username character varying COLLATE pg_catalog.default NOT NULL,
-    CONSTRAINT Wish_pkey PRIMARY KEY (URL),
-    CONSTRAINT username FOREIGN KEY (username)
-        REFERENCES public.Users(username) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
+
+CREATE TABLE IF NOT EXISTS Public.Wish(
+wishId serial primary key ,
+title varchar ,
+URL varchar
 );
-select username from Users where username='gav';
+CREATE TABLE IF NOT EXISTS Public.UserWish(
+username varchar not null,
+wishId integer NOT NULL,
+primary key (wishId, username),
+FOREIGN KEY          (wishId) REFERENCES Wish(wishId) ON DELETE CASCADE,
+FOREIGN KEY          (username) REFERENCES Public.Users(username) ON DELETE CASCADE
+);
+
+
 drop table Users cascade ;
 select * from users;
+select * from wish;
+select * from userwish;
+
+
+SELECT Wish.title, Wish.URL, UserWish.username FROM Public.Wish INNER JOIN Public.UserWish ON UserWish.wishId= Wish.wishId
+                WHERE username='niko' AND URL='www.google.com' AND title='iphone10';
