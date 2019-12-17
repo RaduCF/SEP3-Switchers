@@ -1,11 +1,18 @@
-﻿<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+﻿<style media="screen and (min-width:576px)">
+    #list {
+        position: absolute;
+        float: left;
+    }
+</style>
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container">
         <a class="navbar-brand" href="">CompareIT</a>
         <button class="navbar-toggler" type="button" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-            <ul class="navbar-nav flex-grow-1">
+            <ul class="navbar-nav flex-grow-1" id="list">
                 <li class="nav-item">
                     <NavLink class="nav-link text-dark" href="" Match="NavLinkMatch.All">
                         <span class="oi oi-home" aria-hidden="true"></span> Home

@@ -6,13 +6,11 @@ namespace WebApplication.Data
 {
     public class Item
     {
-        [JsonProperty("title")]
         public string Title { get; set; }
-
-        [JsonProperty("link")]
-        public Uri Link { get; set; }
-
-        [JsonProperty("pagemap")]
-        public Pagemap Pagemap { get; set; }
+        public string URL { get; set; }
+        public string ImageURL { get; set; }
+        public decimal Price { get; set; }
+        public string PriceCurrency { get; set; }
+        public double Rating { get; set; }
     }
 }

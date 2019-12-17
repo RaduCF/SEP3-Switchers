@@ -2,7 +2,9 @@
 
 @using RestSharp
 @using Newtonsoft.Json
+@using WebApplication.Data
 @inject WebApplication.Data.Connection connection
+@inject WebApplication.Data.Wishlist internalWishlist
 
 <style>
     #titlediv {
@@ -13,6 +15,7 @@
     #itemdiv {
         margin-top: 1.5%;
         height: 150px;
+        width: 90%;
         border: 1px solid #ccc;
         border-radius: 4px;
     }
@@ -32,10 +35,14 @@
 
     #itemDescDiv {
         float: right;
-        width: 76.9%;
+        width: 70.9%;
         height: 100%;
         border: 1px solid #ccc;
         border-radius: 2px;
+    }
+
+    #adddiv {
+        width: 6%;
     }
 </style>
 
@@ -48,20 +55,32 @@
     {
         <li id="@index">
             <div id="itemdiv">
-                <a href="@item.Link" target="_blank">
+                <a href="@item.URL" target="_blank">
                     <div id="imagediv"><img src="~/Images/no-img.png" id="photo" alt="Product image." /></div>
                     <div id="itemDescDiv">
                         <p>@item.Title</p>
                         <br />
-                        <p>@item.Pagemap.Offer[0].Price @item.Pagemap.Offer[0].Pricecurrency</p>
+                        <p>Rating of the product: @(Math.Round(item.Rating)</p>
+                        <br />
+                        <p>Price: @item.Price @item.PriceCurrency</p>
                     </div>
                 </a>
+                <div id="adddiv">
+                    <button id="add" class="btn btn-danger" @onclick="AddToWishList">Add to wishlist</button>
+                </div>
             </div>
         </li>
         <li hidden>@(index++)</li>
     }
 </ul>
-@code{
 
+@code{
     public int index { get; set; } = 0;
+
+    private void AddToWishList()
+    {
+
+        UserWish userWish = new UserWish { ID = internalWishlist.Username, Title = connection.Final.ElementAt(index).Title, URL = connection.Final.ElementAt(index).URL };
+        internalWishlist.AddWish(userWish);
+    }
 }

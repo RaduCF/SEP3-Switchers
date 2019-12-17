@@ -4,55 +4,57 @@
 @inject WebApplication.Data.Connection connection
 @inject IJSRuntime jsRuntime
 @using WebApplication.Data
-    <div class="text-center">
-        <h1 style="margin-top:13%;">Register:</h1>
-        <br />
-        <EditForm Model="@registerModel" OnValidSubmit="@PerformRegister">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
 
-            <div class="form-group">
-                <label style="font-size:24px;">First Name:</label>
-                <InputText id="firstname" placeholder="First name" @bind-Value="registerModel.FirstName" required />
-            </div>
+<div class="text-center">
+    <h1 style="margin-top:13%;">Register:</h1>
+    <br />
+    <EditForm Model="@registerModel" OnValidSubmit="@PerformRegister">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
 
-            <div class="form-group">
-                <label style="font-size:24px;">Last Name:</label>
-                <InputText id="lastname" placeholder="Last name" @bind-Value="registerModel.LastName" required />
-            </div>
+        <div class="form-group">
+            <label style="font-size:24px;">First Name:</label>
+            <InputText id="firstname" placeholder="First name" @bind-Value="registerModel.FirstName" required />
+        </div>
 
-            <div class="form-group" style="margin-left:-1%;">
-                <label style="font-size:24px;">User name:</label>
-                <InputText id="username" placeholder="User name" @bind-Value="registerModel.ID" required />
-            </div>
+        <div class="form-group">
+            <label style="font-size:24px;">Last Name:</label>
+            <InputText id="lastname" placeholder="Last name" @bind-Value="registerModel.LastName" required />
+        </div>
 
-            <div class="form-group" style="margin-left:-0.29%;">
-                <label style="font-size:24px;">Password: </label>
-                <InputText type="password" id="pass" placeholder="Password" @bind-Value="registerModel.Password" required />
-            </div>
+        <div class="form-group" style="margin-left:-1%;">
+            <label style="font-size:24px;">User name:</label>
+            <InputText id="username" placeholder="User name" @bind-Value="registerModel.ID" required />
+        </div>
 
-            <div class="form-group" style="margin-left:3.4%;">
-                <label style="font-size:24px;">Email:</label>
-                <InputText id="pass" placeholder="example@gmail.com" @bind-Value="registerModel.Email" required />
-            </div>
+        <div class="form-group" style="margin-left:-0.29%;">
+            <label style="font-size:24px;">Password: </label>
+            <InputText type="password" id="pass" placeholder="Password" @bind-Value="registerModel.Password" required />
+        </div>
 
-            <p style="font-size:20px; color:red; font-weight:500;">@errormessage</p>
+        <div class="form-group" style="margin-left:3.4%;">
+            <label style="font-size:24px;">Email:</label>
+            <InputText id="pass" placeholder="example@gmail.com" @bind-Value="registerModel.Email" required />
+        </div>
 
-            <button style="font-size:20px;" class="btn btn-primary">Register</button>
-            <button style="font-size:20px;" class="btn btn-primary" @onclick="Cancel">Cancel</button>
-        </EditForm>
-    </div>
+        <p style="font-size:20px; color:red; font-weight:500;">@errormessage</p>
+
+        <button style="font-size:20px;" class="btn btn-primary">Register</button>
+        <button style="font-size:20px;" class="btn btn-primary" @onclick="Cancel">Cancel</button>
+    </EditForm>
+</div>
 
 @code {
     private RegisterModel registerModel = new RegisterModel();
 
-    private string errormessage = "";
+    private string errormessage { get; set; } = "";
 
     public async Task PerformRegister()
     {
         try
         {
-            //connection.sendRegisterRequest(firstName, lastName, _username, _password, email);
+            await connection.sendRegisterRequest(registerModel.FirstName, registerModel.LastName, registerModel.ID, registerModel.Password, registerModel.Email);
+
             var interop = new Interop(jsRuntime);
             string antiforgerytoken = await interop.GetElementByName("__RequestVerificationToken");
 
@@ -70,8 +72,8 @@
                 errormessage = e.Message;
             }
         }
-
     }
+
     public void Cancel()
     {
         NavigationManager.NavigateTo("/");

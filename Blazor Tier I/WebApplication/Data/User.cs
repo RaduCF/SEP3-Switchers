@@ -16,6 +16,7 @@ namespace WebApplication.Data
             Password = password ?? throw new ArgumentNullException(nameof(password));
             Email = email ?? throw new ArgumentNullException(nameof(email));
             IsAdmin = isAdmin;
+            wishList = new List<UserWish>();
         }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -23,5 +24,6 @@ namespace WebApplication.Data
         public string Password { get; set; }
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
+        public List<UserWish> wishList { get; set; } = new List<UserWish>();
     }
 }

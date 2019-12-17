@@ -32,14 +32,12 @@ namespace WebApplication.Data
 
                 foreach (var ritem in result)
                 {
-                    if (ritem.Pagemap.Offer != null)
-                    {
                         Final.Add(ritem);
-                    }
                 }
             }
         }
-        public async Task<string> sendRegisterRequest(string firstName, string lastName, string username, string password, string email)
+
+        public async Task sendRegisterRequest(string firstName, string lastName, string username, string password, string email)
         {
             User newuser = new User(firstName, lastName, username, password, email, false);
             var json = JsonConvert.SerializeObject(newuser);
@@ -53,13 +51,11 @@ namespace WebApplication.Data
 
             if (!response.IsSuccessStatusCode)
             {
-                return "User name is already in the system.";
+                throw new Exception("Username already used.");
             }
-            else
-            {
-                return "accepted";
-            }
+            else { }
         }
+
         public async Task<string> sendLoginRequest(string username, string password)
         {
             LoginInfo info = new LoginInfo { ID = username, Password = password };
@@ -82,6 +78,23 @@ namespace WebApplication.Data
             {
                 return "accepted";
             }
+        }
+
+        public async Task sendWish(UserWish wish)
+        {
+            //UserWish wish1 = new UserWish { Id = "ati is missing", Wish_ = new Wish() };
+            var json = JsonConvert.SerializeObject(wish);
+
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var url = "https://localhost:44345/api/UserWishes";
+            using var client = new HttpClient();
+            Console.WriteLine("sent a wish");
+            var response = await client.PostAsync(url, data);
+
+            Console.WriteLine("Status code is: " + response.Content.ReadAsStringAsync().Result);
+
+            //var gotwish = JsonConvert.DeserializeObject<UserWish>(response.Content.ReadAsStringAsync().Result);
         }
     }
 }

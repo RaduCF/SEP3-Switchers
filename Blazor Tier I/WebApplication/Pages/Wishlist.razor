@@ -1,11 +1,62 @@
 ﻿@page "/Wishlist"
 
+@using WebApplication.Data
+@inject WebApplication.Data.Wishlist internalWishlist
+@inject WebApplication.Data.Connection connection
 
+<style>
+    #container {
+        margin-top:1%;
+        width: 100%;
+    }
+    #wish {
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        float: left;
+    }
+    #buttondiv {
+        width: 9%;
+        float: right;
+    }
+    #link {
+        width: 100%;
+    }
+    #title {
+        width:100%;
+    }
+    #delete {
+
+    }
+</style>
 
 <div class="text-center">
     <h3>Your wishlist:</h3>
+    <br />
+    <ul class="list-unstyled">
+        @foreach (var wish in internalWishlist.wishlist)
+        {
+        <li id="@index">
+            <div id="container" class="text-center">
+                <div id="wish">
+                    <a id="link" href="@wish.URL" target="_blank">
+                        <p id="title">@wish.Title</p>
+                    </a>
+                </div>
+                <div id="buttondiv">
+                    <button id="delete" class="btn btn-danger" @onclick="DeleteWish">Delete</button>
+                </div>
+                <p hidden><span hidden>@(index++)</span></p>
+            </div>
+        </li>
+        }
+    </ul>
 </div>
 
 @code {
-
+    int index = 0;
+    private void DeleteWish()
+    {
+        //internalWishlist.AddWish(connection.sendWish(new UserWish { ID = "ati is missing", URL = "gfdtsfyguhj", Title = "jhdtrsgfhj" }));
+    }
 }

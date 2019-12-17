@@ -36,6 +36,7 @@ namespace WebApplication
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<Connection>();
+            services.AddScoped<Wishlist>();
 
             services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
 

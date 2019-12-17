@@ -14,7 +14,7 @@ namespace WebApplication.Data
         public string LastName { get; set; }
         [Required]
         [StringLength(20, MinimumLength = 6, ErrorMessage = "User name has to be between 6 and 20 characters.")]
-        public string ID { get; set; } // the only primary key accepted is ID therefor the username is changed to ID
+        public string ID { get; set; }
         [Required]
         [StringLength(20, MinimumLength = 6, ErrorMessage = "Password has to be between 6 and 20 characters.")]
         [DataType(DataType.Password)]
