@@ -27,11 +27,16 @@ FOREIGN KEY          (username) REFERENCES Public.Users(username) ON DELETE CASC
 );
 
 
-drop table Users cascade ;
+drop table userwish cascade ;
 select * from users;
 select * from wish;
 select * from userwish;
 
 
-SELECT Wish.title, Wish.URL, UserWish.username FROM Public.Wish INNER JOIN Public.UserWish ON UserWish.wishId= Wish.wishId
-                WHERE username='niko' AND URL='www.google.com' AND title='iphone10';
+SELECT Wish.wishId,Wish.title, Wish.URL, UserWish.username FROM Public.Wish INNER JOIN Public.UserWish ON UserWish.wishId= Wish.wishId
+SELECT UserWish.wishId,Wish.URL, Wish.Title,UserWish.username
+                FROM Public.Wish INNER JOIN Public.UserWish ON Wish.wishId=UserWish.wishId
+               WHERE URL='www.google.com' AND title='iphone11' AND UserWish.username='niko';
+               SELECT UserWish.username,Wish.URL,Wish.title FROM Public.Wish
+                INNER JOIN Public.UserWish ON UserWish.wishId=Wish.wishId
+                WHERE URL='khhmnmbnh' AND title='fanbkomlse' AND UserWish.username='niko';
